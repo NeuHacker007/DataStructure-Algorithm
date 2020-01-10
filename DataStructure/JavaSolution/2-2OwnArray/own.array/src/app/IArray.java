@@ -3,6 +3,7 @@ public interface IArray {
     int getCapacity();
     int getSize();
     boolean isEmpty();
-    void add(int item);
+    void addLast(int item);
+    void add(int index, int item);
     int remove(int index);
 }
