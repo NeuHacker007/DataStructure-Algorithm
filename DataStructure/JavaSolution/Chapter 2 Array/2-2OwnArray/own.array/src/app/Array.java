@@ -29,6 +29,11 @@ public class Array implements IArray {
         data[index] = e;
     }
 
+    /**
+     * Return the boolean indicate whether the value is in the array
+     * @param e
+     * @return
+     */
     public boolean contains(int e) {
         for(int i = 0; i < size; i++) {
             if (data[i] == e) {
@@ -36,6 +41,16 @@ public class Array implements IArray {
             }
         }
         return false;
+    }
+
+    public int search(int e) {
+        int index = -1; 
+        for (int i = 0; i < size; i++) {
+            if (data[i] == e) {
+                index = i;
+            }
+        }
+        return index;
     }
 
     @Override

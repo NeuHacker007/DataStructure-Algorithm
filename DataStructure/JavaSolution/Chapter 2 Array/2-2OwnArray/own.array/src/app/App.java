@@ -11,5 +11,10 @@ public class App {
         System.out.println(arr);
         arr.remove(0);
         System.out.println(arr);
+        System.out.println(arr.contains(0));
+        System.out.println(arr.contains(3));
+        arr.remove(9);
+        System.out.println(arr);
+        
     }
 }
