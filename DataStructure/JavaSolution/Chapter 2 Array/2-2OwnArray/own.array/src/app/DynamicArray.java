@@ -34,7 +34,8 @@ public class DynamicArray<E> implements IGenericArray<E> {
 
     public void add(int index, E e) {
         if (size == data.length) {
-            throw new IllegalArgumentException("Add Failed! The array is full!");
+            // throw new IllegalArgumentException("Add Failed! The array is full!");
+            this.resize(2 * data.length);
         }
 
         if (index < 0 || index > size) {
@@ -49,7 +50,7 @@ public class DynamicArray<E> implements IGenericArray<E> {
     }
 
     public E remove(int index) {
-        if (index < 0 || index > size) {
+        if (index < 0 || index >= size) {
             throw new IllegalArgumentException("Add Failed! The index is invalid!");
         }
         E result = data[index];
@@ -58,6 +59,10 @@ public class DynamicArray<E> implements IGenericArray<E> {
             data[i] = data[i + 1];
         }
         size--;
+        data[size] = null;
+        if (size == data.length / 4 && data.length / 2 != 0) {
+            this.resize(data.length / 2);
+        }
         return result; 
     }
     public boolean contains(E e) {
@@ -82,5 +87,13 @@ public class DynamicArray<E> implements IGenericArray<E> {
         sb.append(']');
 
         return sb.toString();
+    }
+
+    private void resize(int newCapacity) {
+        E[] newData = (E[]) new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
     }
 }
