@@ -16,12 +16,12 @@ public class App {
         arr.remove(9);
         System.out.println(arr);
 
-        // GenericArray<Integer> gArray = new GenericArray<Integer>(20);
-        // for (int i = 0; i < 10; i++) {
-        //     gArray.add(size - 1, i);
-        // }
+        GenericArray<Integer> gArray = new GenericArray<Integer>(20);
+        for (int i = 0; i < 10; i++) {
+            gArray.addLast(i);
+        }
 
-        // System.out.println(gArray);
+        System.out.println(gArray);
         
         
     }
