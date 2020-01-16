@@ -1,5 +1,5 @@
 package app;
-public class GArray<E> implements IGenericArray {
+public class GArray<E> implements IGArray<E> {
     private E[] data;
     private int size;
 
@@ -11,7 +11,27 @@ public class GArray<E> implements IGenericArray {
     public GArray() {
         this(20);
     }
+    public int get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException("Get failed! index invalid");
+        }
+        return data[index];
+    }
 
+    public void set(int index, int e) {
+        if (index < 0 || index >= size) {
+            throw new IllegalArgumentException("Get failed! index invalid");
+        }
+        data[index] = e;
+    }
+
+    public E getFirst() {
+        return get(0);
+    }
+
+    public E getLast() {
+        return get(size - 1);
+    }
     public int getSize() {
         return size;
     }
@@ -34,7 +54,8 @@ public class GArray<E> implements IGenericArray {
 
     public void add(int index, E e) {
         if (size == data.length) {
-            throw new IllegalArgumentException("Add Failed! The array is full!");
+            // throw new IllegalArgumentException("Add Failed! The array is full!");
+            this.resize(2 * data.length);
         }
 
         if (index < 0 || index > size) {
@@ -49,7 +70,7 @@ public class GArray<E> implements IGenericArray {
     }
 
     public E remove(int index) {
-        if (index < 0 || index > size) {
+        if (index < 0 || index >= size) {
             throw new IllegalArgumentException("Add Failed! The index is invalid!");
         }
         E result = data[index];
@@ -58,7 +79,15 @@ public class GArray<E> implements IGenericArray {
             data[i] = data[i + 1];
         }
         size--;
+        data[size] = null;
+        if (size == data.length / 4 && data.length / 2 != 0) {
+            this.resize(data.length / 2);
+        }
         return result; 
+    }
+
+    public E removeLast() {
+        return remove(size - 1);
     }
     public boolean contains(E e) {
         for (int i = 0; i < size; i++) {
@@ -82,5 +111,13 @@ public class GArray<E> implements IGenericArray {
         sb.append(']');
 
         return sb.toString();
+    }
+
+    private void resize(int newCapacity) {
+        E[] newData = (E[]) new Object[newCapacity];
+        for (int i = 0; i < size; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
     }
 }

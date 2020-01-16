@@ -16,7 +16,7 @@ public class App {
         arr.remove(9);
         System.out.println(arr);
 
-        GenericArray<Integer> gArray = new GenericArray<Integer>(20);
+        GArray<Integer> gArray = new GArray<Integer>(20);
         for (int i = 0; i < 10; i++) {
             gArray.addLast(i);
         }
