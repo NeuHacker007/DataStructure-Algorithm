@@ -11,14 +11,14 @@ public class GArray<E> implements IGArray<E> {
     public GArray() {
         this(20);
     }
-    public int get(int index) {
+    public E get(int index) {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException("Get failed! index invalid");
         }
         return data[index];
     }
 
-    public void set(int index, int e) {
+    public void set(int index, E e) {
         if (index < 0 || index >= size) {
             throw new IllegalArgumentException("Get failed! index invalid");
         }
