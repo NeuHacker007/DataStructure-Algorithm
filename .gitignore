@@ -5,7 +5,7 @@
 */.settings/org.eclipse.jdt.core.prefs
 *.classpath
 *.project
-
+*.settings
 *.settings/org.eclipse.jdt.core.prefs
 
 
