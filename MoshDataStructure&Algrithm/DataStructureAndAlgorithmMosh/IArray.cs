@@ -1,7 +1,13 @@
+
 namespace ArrayDemo {
     public interface IArray {
-        void removeAt (int index);
-        void insert (int num);
-        int indexOf (int num);
+        void RemoveAt (int index);
+        void Insert (int num);
+        int IndexOf (int num);
+        int Max ();
+        Array Intersect (Array anotherArray);
+        int[] Reverse ();
+
+        void InsertAt (int index, int num);
     }
 }

@@ -9,3 +9,7 @@
 *.settings/org.eclipse.jdt.core.prefs
 
 
+*.dll
+*.pdb
+*.dll
+*.pdb
