@@ -114,6 +114,32 @@ namespace LinkedListDemo {
             return result;
         }
 
+        public void Reverse () {
+            if (isEmpty ()) return;
+            // var current = this.Head;
+            // while (current != null) {
+            //     var next = current.Next;
+            //     next.Next = current;
+            //     current = current.Next;
+            // }
+            var previous = this.Head;
+            var current = this.Head.Next;
+            while (current != null) {
+                var next = current.Next;
+                // [10 -> 20]
+                //  p      c    n
+                // [10 <- 20]
+                //        p    c  n
+                current.Next = previous;
+                previous = current;
+                // keep the loop work
+                current = next;
+            }
+            this.Tail = this.Head;
+            this.Tail.Next = null;
+            this.Head = previous;
+        }
+
         private bool isEmpty () {
             return this.Head == null;
         }
