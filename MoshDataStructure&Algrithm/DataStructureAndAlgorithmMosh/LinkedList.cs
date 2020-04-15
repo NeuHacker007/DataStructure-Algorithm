@@ -9,7 +9,7 @@ namespace LinkedListDemo {
 
         public void AddFirst (int item) {
             var node = new Node (item);
-            if (this.isEmpty ()) {
+            if (this.IsEmpty ()) {
                 this.Head = this.Tail = node;
             } else {
                 node.Next = this.Head;
@@ -23,7 +23,7 @@ namespace LinkedListDemo {
         public void AddLast (int item) {
             var node = new Node (item);
             // this node is the first element in the linked list
-            if (this.isEmpty ()) {
+            if (this.IsEmpty ()) {
                 this.Head = node;
                 this.Tail = node;
             } else {
@@ -41,7 +41,7 @@ namespace LinkedListDemo {
                 this.Size--;
                 return result.Data;
             }
-            if (!this.isEmpty ()) {
+            if (!this.IsEmpty ()) {
                 this.Head = this.Head.Next;
                 result.Next = null;
                 this.Size--;
@@ -55,7 +55,7 @@ namespace LinkedListDemo {
         public int DeleteLast () {
             Node result = this.Tail;
 
-            if (isEmpty ()) {
+            if (IsEmpty ()) {
                 throw new Exception ("List is empty");
             }
             // processing the only one item in the list
@@ -115,7 +115,7 @@ namespace LinkedListDemo {
         }
 
         public void Reverse () {
-            if (isEmpty ()) return;
+            if (IsEmpty ()) return;
             // var current = this.Head;
             // while (current != null) {
             //     var next = current.Next;
@@ -156,7 +156,7 @@ namespace LinkedListDemo {
             if (k < 1 || k > this.Size) {
                 throw new Exception ("Invalid K number. out of range");
             }
-            if (isEmpty ()) throw new Exception ("List is empty");
+            if (IsEmpty ()) throw new Exception ("List is empty");
 
             // var first = this.Head;
             // var second = this.Head;
@@ -189,7 +189,37 @@ namespace LinkedListDemo {
             return first.Data;
         }
 
-        private bool isEmpty () {
+        /*
+         * Find the middle of a linked list in one pass. if the list has an even number of nodes, there would 
+         * be two middlenodes (Assume that you don't know the size of the list ahead of time)
+         */
+        public int[] FintItemsInMiddle () {
+            int[] result = new int[2];
+
+            // [10 -> 20 -> 30 -> 40 -> 50]                    [10 -> 20 -> 30 -> 40 -> 50 -> 60]
+            //  fs                                              fs
+            //        f     s                                         f            s
+            //              f           s                                    f    f.next      s
+            //            middle                                          middle middle
+            var first = this.Head;
+            var second = this.Head;
+
+            while (second != this.Tail && second.Next != this.Tail) {
+                first = first.Next;
+                second = second.Next.Next;
+            }
+
+            if (second == this.Tail) {
+                result[0] = first.Data;
+            } else {
+                result[0] = first.Data;
+                result[1] = first.Next.Data;
+            }
+
+            return result;
+        }
+
+        private bool IsEmpty () {
             return this.Head == null;
         }
 
