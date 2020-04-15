@@ -102,6 +102,18 @@ namespace LinkedListDemo {
             return this.Size;
         }
 
+        public int[] ToArray () {
+            int[] result = new int[this.Size];
+            int index = 0;
+            var current = this.Head;
+            while (current != null) {
+                result[index++] = current.Data;
+                current = current.Next;
+            }
+
+            return result;
+        }
+
         private bool isEmpty () {
             return this.Head == null;
         }
