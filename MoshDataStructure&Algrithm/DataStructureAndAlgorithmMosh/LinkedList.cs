@@ -140,6 +140,55 @@ namespace LinkedListDemo {
             this.Head = previous;
         }
 
+        public int getKthNodeFromEnd (int k) {
+            //         5     4    3      2     1
+            //       [10 -> 20 -> 30 -> 40 -> 50]
+            // K = 0                              out return
+            // K = 1                          out
+            // K = 2                    out
+            // K = 3              out
+            // ...
+            // K = 5  out
+            // K = 6  return
+
+            // here if K < 1 judgement is not necessary it might be over defensive since without this 
+            // even we input k =0, k = -1, program will return the first element in the list when counting from end
+            if (k < 1 || k > this.Size) {
+                throw new Exception ("Invalid K number. out of range");
+            }
+            if (isEmpty ()) throw new Exception ("List is empty");
+
+            // var first = this.Head;
+            // var second = this.Head;
+            // int index = 0;
+            // while (second != null) {
+            //     if (index == k) {
+            //         first = first.Next;                    Wrong Implementation
+            //     } else {
+            //         index++;
+            //     }
+            //     second = second.Next;
+
+            // }
+
+            var first = this.Head;
+            var second = this.Head;
+            // First find the right distance between first and second pointer
+            for (int i = 0; i < k - 1; i++) {
+                second = second.Next;
+                // An alternative way of checking given K is larger then the size 
+                // if (b == null) throw new Exception ("Invalid K number. out of range");
+            }
+            // when distance is determined, then loop both pointer
+            // untile the second one reaches the end
+            while (second != this.Tail) {
+                first = first.Next;
+                second = second.Next;
+            }
+
+            return first.Data;
+        }
+
         private bool isEmpty () {
             return this.Head == null;
         }
@@ -156,7 +205,7 @@ namespace LinkedListDemo {
             return null;
         }
 
-        private class Node {
+        public class Node {
             public int Data;
             public Node Next;
 
