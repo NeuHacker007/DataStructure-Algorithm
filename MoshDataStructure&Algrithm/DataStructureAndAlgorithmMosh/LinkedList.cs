@@ -5,6 +5,8 @@ namespace LinkedListDemo {
         private Node Head;
         private Node Tail;
 
+        private int Size = 0;
+
         public void AddFirst (int item) {
             var node = new Node (item);
             if (this.isEmpty ()) {
@@ -13,6 +15,8 @@ namespace LinkedListDemo {
                 node.Next = this.Head;
                 this.Head = node;
             }
+
+            this.Size++;
 
         }
 
@@ -26,17 +30,21 @@ namespace LinkedListDemo {
                 this.Tail.Next = node;
                 this.Tail = node;
             }
+            this.Size++;
+
         }
 
         public int DeleteFirst () {
             Node result = this.Head;
             if (this.Head == this.Tail) {
                 this.Head = this.Tail = null;
+                this.Size--;
                 return result.Data;
             }
             if (!this.isEmpty ()) {
                 this.Head = this.Head.Next;
                 result.Next = null;
+                this.Size--;
             } else {
                 throw new Exception ("List is empty");
             }
@@ -55,19 +63,11 @@ namespace LinkedListDemo {
                 this.Head = this.Tail = null;
             }
 
-            var current = this.Head;
-            while (current != null) {
-                if (current.Next == this.Tail) {
-                    break;
-                } else {
-                    current = current.Next;
-                }
-            }
             // shorten the list
-            this.Tail = current;
+            this.Tail = this.getPreviousNode (this.Tail);
             // remove the reference in order GC can collect it.
-            current.Next = null;
-
+            this.Tail.Next = null;
+            this.Size--;
             return result.Data;
         }
 
@@ -98,8 +98,24 @@ namespace LinkedListDemo {
             return -1;
         }
 
+        public int getSize () {
+            return this.Size;
+        }
+
         private bool isEmpty () {
             return this.Head == null;
+        }
+
+        private Node getPreviousNode (Node item) {
+            var current = this.Head;
+            while (current != null) {
+                if (current.Next == this.Tail) {
+                    return current;
+                } else {
+                    current = current.Next;
+                }
+            }
+            return null;
         }
 
         private class Node {
