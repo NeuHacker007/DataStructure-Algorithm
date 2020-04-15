@@ -219,6 +219,22 @@ namespace LinkedListDemo {
             return result;
         }
 
+        public bool FindLoop () {
+
+            var fast = this.Head;
+            var slow = this.Head;
+
+            while (fast != null && fast.Next != null) {
+                if (fast == slow) {
+                    return true;
+                }
+                fast = fast.Next.Next;
+                slow = slow.Next;
+            }
+
+            return false;
+        }
+
         private bool IsEmpty () {
             return this.Head == null;
         }
