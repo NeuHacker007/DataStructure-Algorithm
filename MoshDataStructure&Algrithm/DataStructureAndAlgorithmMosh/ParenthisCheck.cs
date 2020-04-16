@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 namespace StackDemo {
     public class ValidateParenthis {
+        private static readonly List<char> leftBrakets = new List<char> () { '(', '<', '[', '{' };
+        private static readonly List<char> rightBrakets = new List<char> () { ')', '>', ']', '}' };
         public static bool isValid (string input) {
             if (string.IsNullOrWhiteSpace (input)) throw new ArgumentException ("input string is null or empty");
             Stack<char> stack = new Stack<char> ();
@@ -29,6 +31,7 @@ namespace StackDemo {
         }
         public static bool isValid2 (string input) {
             if (string.IsNullOrWhiteSpace (input)) throw new ArgumentException ("input string is null or empty");
+
             Stack<char> stack = new Stack<char> ();
 
             foreach (var ch in input) {
@@ -38,7 +41,6 @@ namespace StackDemo {
                 if (isRightBracket (ch)) {
                     if (stack.Count == 0) return false;
 
-                    
                     char temp = stack.Pop ();
                     if (isMatchBracket (ch, temp)) {
                         return true;
@@ -50,13 +52,21 @@ namespace StackDemo {
         }
 
         private static bool isLeftBracket (char ch) {
-            return ch == '(' || ch == '<' || ch == '[' || ch == '{';
+            return leftBrakets.Contains (ch);
         }
         private static bool isRightBracket (char ch) {
-            return ch == ')' || ch == '>' || ch == ']' || ch == '}';
+            return rightBrakets.Contains (ch);
         }
         private static bool isMatchBracket (char left, char right) {
-            return left == '(' && right == ')' || left == '[' && right == ']' || left == '<' && right == '>' || left == '{' && right == '}';
+            // this optimization has a hide requirement that the same element in both left brackets
+            // and right brackets list has the same index. If one of them are not ordered properly, 
+            // this logic will fail.
+            // return leftBrakets.IndexOf (left) == rightBrakets.IndexOf (right);
+            return left == '(' && right == ')' ||
+                left == '[' && right == ']' ||
+                left == '<' && right == '>' ||
+                left == '{' && right == '}';
+
         }
     }
 }
