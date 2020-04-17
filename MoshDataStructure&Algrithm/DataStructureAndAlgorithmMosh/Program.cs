@@ -1,19 +1,17 @@
 ﻿using System;
-using StackExcercise;
+using System.Collections.Generic;
+using QueueDemo;
 namespace DataStructureAndAlgorithmMosh {
     class Program {
         static void Main (string[] args) {
-
-            MoshMinImplementation stack = new MoshMinImplementation ();
-
-            stack.Push (5);
-            stack.Push (2);
-            stack.Push (1);
-            stack.Push (10);
-            System.Console.WriteLine (stack.Min ());
-            stack.Pop ();
-            System.Console.WriteLine (stack.Min ());
-
+            Queue<int> queue = new Queue<int> ();
+            queue.Enqueue (10);
+            queue.Enqueue (20);
+            queue.Enqueue (30);
+            var result = QueueReverse.Reverse (queue);
+            System.Console.WriteLine (result.Dequeue ());
+            System.Console.WriteLine (result.Dequeue ());
+            System.Console.WriteLine (result.Dequeue ());
         }
     }
 }
