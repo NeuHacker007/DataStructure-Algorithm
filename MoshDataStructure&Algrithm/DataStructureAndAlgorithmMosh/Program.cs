@@ -1,20 +1,15 @@
-﻿using QueueDemo;
+﻿using System.Collections.Generic;
+using QueueExcercise;
 namespace DataStructureAndAlgorithmMosh {
     class Program {
         static void Main (string[] args) {
-            PriorityQueue queue = new PriorityQueue(10);
-            queue.Enqueue(5);
-            queue.Enqueue(3);
-            queue.Enqueue(6);
-            queue.Enqueue(1);
-            queue.Enqueue(2);
-            System.Console.WriteLine(queue);
-
-            System.Console.WriteLine(queue.Dequeue());
-            System.Console.WriteLine(queue);
-            System.Console.WriteLine(queue.Dequeue());
-            System.Console.WriteLine(queue);
-
+            Queue<int> queue = new Queue<int> ();
+            queue.Enqueue (10);
+            queue.Enqueue (20);
+            queue.Enqueue (30);
+            queue.Enqueue (40);
+            queue.Enqueue (50);
+            System.Console.WriteLine (ReverseFirstKEleInQueue.ReverseKEleInQueue (queue, 5));
         }
     }
 }
