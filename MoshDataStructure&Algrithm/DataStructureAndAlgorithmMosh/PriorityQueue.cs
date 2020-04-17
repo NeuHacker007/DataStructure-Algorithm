@@ -13,7 +13,22 @@ namespace QueueDemo {
         }
 
         public void Enqueue (int item) {
-            if (count == items.Length) throw new Exception ("Queue is Full");
+            if (isFull ()) throw new Exception ("Queue is Full");
+            var indexToInsert = ShiftItemsToInsert (item);
+            items[indexToInsert] = item;
+            count++;
+        }
+
+        public int Dequeue () {
+            if (isEmpty ()) throw new Exception ("Queue is Empty");
+
+            var result = items[count - 1];
+            items[--count] = 0;
+
+            return result;
+        }
+
+        private int ShiftItemsToInsert (int item) {
             int i;
             for (i = count - 1; i >= 0; i--) {
                 if (items[i] > item) {
@@ -22,17 +37,16 @@ namespace QueueDemo {
                     break;
                 }
             }
-            items[i + 1] = item;
-            count++;
+
+            return i + 1;
         }
 
-        public int Dequeue () {
-            if (count == 0) throw new Exception ("Queue is Empty");
+        public bool isFull () {
+            return count == items.Length;
+        }
 
-            var result = items[count - 1];
-            items[--count] = 0;
-
-            return result;
+        public bool isEmpty () {
+            return count == 0;
         }
 
         public override string ToString () {
