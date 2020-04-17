@@ -14,12 +14,20 @@ namespace QueueDemo {
         }
 
         public int Dequeue () {
-
             if (IsStackEmpty ()) throw new Exception ("stack is empty");
+
             MoveItemsFromStack1ToStack2 ();
+
             return stack2.Pop ();
         }
 
+        public int Peek () {
+            if (IsStackEmpty ()) throw new Exception ("stack is empty");
+
+            MoveItemsFromStack1ToStack2 ();
+
+            return stack2.Peek ();
+        }
         private void MoveItemsFromStack1ToStack2 () {
             if (IsStack2Empty ()) {
 
