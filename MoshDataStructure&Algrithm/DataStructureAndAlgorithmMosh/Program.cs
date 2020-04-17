@@ -12,6 +12,11 @@ namespace DataStructureAndAlgorithmMosh {
             System.Console.WriteLine (queue);
             System.Console.WriteLine (queue.Dequeue ());
             System.Console.WriteLine (queue);
+            queue.Enqueue (40);
+            queue.Enqueue (50);
+            queue.Enqueue (60);
+            queue.Enqueue (70);
+            System.Console.WriteLine (queue);
 
         }
     }
