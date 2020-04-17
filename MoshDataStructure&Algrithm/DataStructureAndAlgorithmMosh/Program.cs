@@ -2,7 +2,7 @@
 namespace DataStructureAndAlgorithmMosh {
     class Program {
         static void Main (string[] args) {
-            ArrayQueue queue = new ArrayQueue (10);
+            ArrayCircularQueue queue = new ArrayCircularQueue (5);
             queue.Enqueue (10);
             queue.Enqueue (20);
             queue.Enqueue (30);
@@ -16,6 +16,7 @@ namespace DataStructureAndAlgorithmMosh {
             queue.Enqueue (50);
             queue.Enqueue (60);
             queue.Enqueue (70);
+            //queue.Enqueue (80);
             System.Console.WriteLine (queue);
 
         }
