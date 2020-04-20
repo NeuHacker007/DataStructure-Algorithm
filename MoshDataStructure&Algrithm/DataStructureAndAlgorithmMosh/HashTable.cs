@@ -46,6 +46,36 @@ namespace HashTableDemo {
             bucket.AddLast (new Entry (key, value));
         }
 
+        public String Get (int key) {
+            var index = Hash (key);
+            var bucket = entries[index];
+            if (bucket != null) {
+                foreach (var item in bucket) {
+                    if (item.key == key) {
+                        return item.value;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public void Remove(int key) {
+            var index = Hash(key);
+            var bucket = entries[index];
+
+            if (bucket == null) throw new Exception("Enty is empty");
+
+            foreach(var item in bucket) {
+                if (item.key == key) {
+                    bucket.Remove(item);
+                    return;
+                }
+            }
+
+            throw new Exception("Key not found");
+        }
+
         private int Hash (int k) {
             return k % entries.Length;
         }
