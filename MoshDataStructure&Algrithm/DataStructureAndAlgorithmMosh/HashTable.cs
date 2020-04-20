@@ -27,6 +27,9 @@ namespace HashTableDemo {
         public void Put2 (int key, string value) {
             var index = Hash (key);
             var bucket = entries[index];
+            if (entries[index] == null) {
+                entries[index] = new LinkedList<Entry> ();
+            }
             // in this solution, we solve the put1 issue by update the value 
             // in the linked list when their key are same.
             // in C# Hashtable, if duplicate key found it will throw an exception
@@ -38,13 +41,8 @@ namespace HashTableDemo {
                     return;
                 }
             }
-
-            if (bucket == null) {
-                bucket = new LinkedList<Entry> ();
-            } else {
-                // O(1)
-                bucket.AddLast (new Entry (key, value));
-            }
+            // O(1)
+            bucket.AddLast (new Entry (key, value));
         }
 
         private int Hash (int k) {
