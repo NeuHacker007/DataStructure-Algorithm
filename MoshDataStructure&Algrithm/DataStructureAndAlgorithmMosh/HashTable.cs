@@ -26,10 +26,11 @@ namespace HashTableDemo {
 
         public void Put2 (int key, string value) {
             var index = Hash (key);
-            var bucket = entries[index];
             if (entries[index] == null) {
                 entries[index] = new LinkedList<Entry> ();
             }
+
+            var bucket = entries[index];
             // in this solution, we solve the put1 issue by update the value 
             // in the linked list when their key are same.
             // in C# Hashtable, if duplicate key found it will throw an exception
