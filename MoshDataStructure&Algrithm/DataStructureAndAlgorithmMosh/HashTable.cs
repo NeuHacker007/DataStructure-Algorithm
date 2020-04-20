@@ -48,7 +48,7 @@ namespace HashTableDemo {
                 entry.value = value;
                 return;
             }
-            var bucket = getOrCreateBucket (key);
+            var bucket = GetOrCreateBucket (key);
             // O(1)
             bucket.AddLast (new Entry (key, value));
         }
@@ -79,7 +79,7 @@ namespace HashTableDemo {
             var entry = GetEntry (key);
             if (entry == null) throw new Exception ("Entry not found");
 
-            getBucket (key).Remove (entry);
+            GetBucket (key).Remove (entry);
             // var index = Hash (key);
             // var bucket = entries[index];
 
@@ -94,11 +94,11 @@ namespace HashTableDemo {
 
             // throw new Exception ("Key not found");
         }
-        private LinkedList<Entry> getBucket (int key) {
+        private LinkedList<Entry> GetBucket (int key) {
             return entries[Hash (key)];
         }
 
-        private LinkedList<Entry> getOrCreateBucket (int key) {
+        private LinkedList<Entry> GetOrCreateBucket (int key) {
             var index = Hash (key);
             var bucket = entries[index];
 
@@ -110,7 +110,7 @@ namespace HashTableDemo {
         }
 
         private Entry GetEntry (int key) {
-            var bucket = getBucket (key);
+            var bucket = GetBucket (key);
             if (bucket != null) {
                 foreach (var item in bucket) {
                     if (item.key == key) {
