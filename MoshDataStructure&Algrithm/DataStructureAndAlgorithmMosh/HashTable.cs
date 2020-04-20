@@ -25,55 +25,100 @@ namespace HashTableDemo {
         }
 
         public void Put2 (int key, string value) {
-            var index = Hash (key);
-            if (entries[index] == null) {
-                entries[index] = new LinkedList<Entry> ();
-            }
+            // var index = Hash (key);
+            // if (entries[index] == null) {
+            //     entries[index] = new LinkedList<Entry> ();
+            // }
 
-            var bucket = entries[index];
+            // var bucket = entries[index];
+            
             // in this solution, we solve the put1 issue by update the value 
             // in the linked list when their key are same.
             // in C# Hashtable, if duplicate key found it will throw an exception
 
-            // O(n)
-            foreach (var item in bucket) {
-                if (item.key == key) {
-                    item.value = value;
-                    return;
-                }
+            // // O(n)
+            // foreach (var item in bucket) {
+            //     if (item.key == key) {
+            //         item.value = value;
+            //         return;
+            //     }
+            // }
+            var entry = GetEntry(key);
+            if (entry != null) {
+                entry.value = value;
+                return;
             }
+            var bucket = getOrCreateBucket (key);
             // O(1)
             bucket.AddLast (new Entry (key, value));
         }
 
         public String Get (int key) {
+
+            var entry = GetEntry (key);
+            return (entry == null) ? null : entry.value;
+
+            // if (entry == null) return null;
+
+            // return entry.value;
+
+            // var index = Hash (key);
+            // var bucket = entries[index];
+            // if (bucket != null) {
+            //     foreach (var item in bucket) {
+            //         if (item.key == key) {
+            //             return item.value;
+            //         }
+            //     }
+            // }
+
+            // return null;
+        }
+
+        public void Remove (int key) {
+            var entry = GetEntry (key);
+            if (entry == null) throw new Exception ("Entry not found");
+
+            getBucket (key).Remove (entry);
+            // var index = Hash (key);
+            // var bucket = entries[index];
+
+            // if (bucket == null) throw new Exception ("Enty is empty");
+
+            // foreach (var item in bucket) {
+            //     if (item.key == key) {
+            //         bucket.Remove (item);
+            //         return;
+            //     }
+            // }
+
+            // throw new Exception ("Key not found");
+        }
+        private LinkedList<Entry> getBucket (int key) {
+            return entries[Hash (key)];
+        }
+
+        private LinkedList<Entry> getOrCreateBucket (int key) {
             var index = Hash (key);
             var bucket = entries[index];
+
+            if (bucket == null) {
+                entries[index] = new LinkedList<Entry> ();
+            }
+
+            return bucket;
+        }
+
+        private Entry GetEntry (int key) {
+            var bucket = getBucket (key);
             if (bucket != null) {
                 foreach (var item in bucket) {
                     if (item.key == key) {
-                        return item.value;
+                        return item;
                     }
                 }
             }
-
             return null;
-        }
-
-        public void Remove(int key) {
-            var index = Hash(key);
-            var bucket = entries[index];
-
-            if (bucket == null) throw new Exception("Enty is empty");
-
-            foreach(var item in bucket) {
-                if (item.key == key) {
-                    bucket.Remove(item);
-                    return;
-                }
-            }
-
-            throw new Exception("Key not found");
         }
 
         private int Hash (int k) {
