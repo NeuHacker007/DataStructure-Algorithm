@@ -39,6 +39,18 @@ namespace HashTableDemo {
             return char.MinValue;
         }
         public static char FindFirstRepeatChar (string str) {
+            /**
+                
+                The HashSet class implements the ICollection, IEnumerable, IReadOnlyCollection, ISet, IEnumerable, IDeserializationCallback, and ISerializable interfaces.
+                In HashSet, the order of the element is not defined. You cannot sort the elements of HashSet.
+                In HashSet, the elements must be unique.
+                In HashSet, duplicate elements are not allowed.
+                Is provides many mathematical set operations, such as intersection, union, and difference.
+                The capacity of a HashSet is the number of elements it can hold.
+                A HashSet is a dynamic collection means the size of the HashSet is automatically increased when the new elements are added.
+                In HashSet, you can only store the same type of elements.
+
+            */
             HashSet<char> set = new HashSet<char>();
 
             foreach (var ch in str) {
