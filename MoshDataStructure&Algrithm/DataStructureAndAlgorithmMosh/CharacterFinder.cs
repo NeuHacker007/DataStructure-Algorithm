@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 namespace HashTableDemo {
     public class CharacterFinder {
         public static char FindFirstNonRepeatChar (string str) {
@@ -35,6 +36,15 @@ namespace HashTableDemo {
                 }
             }
 
+            return char.MinValue;
+        }
+        public static char FindFirstRepeatChar (string str) {
+            HashSet<char> set = new HashSet<char>();
+
+            foreach (var ch in str) {
+                if (set.Contains(ch)) return ch;
+                set.Add(ch);
+            }
             return char.MinValue;
         }
     }
