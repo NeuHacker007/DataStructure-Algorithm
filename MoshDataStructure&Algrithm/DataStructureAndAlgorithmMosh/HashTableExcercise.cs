@@ -35,6 +35,10 @@ namespace HashTableExcercises {
             return new int[5];
         }
 
+        /*
+            this solution doesn't match the unique requirement 
+            [ 1, 7, 5, 5, 7, 12, 2 ] will return 2
+        */
         public static int CountPairsWithKDiff (int[] array, int k) {
 
             HashSet<int> set = new HashSet<int> ();
