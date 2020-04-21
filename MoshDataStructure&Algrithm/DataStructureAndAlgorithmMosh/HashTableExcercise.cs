@@ -31,7 +31,8 @@ namespace HashTableExcercises {
             }
             return result;
         }
-        public static int[] TwoSum () {
+        public static int[] TwoSum (int[] input, int target) {
+            // TODO: to be solved
             return new int[5];
         }
 
@@ -75,4 +76,6 @@ namespace HashTableExcercises {
             return count;
         }
     }
+
+    // TODO: implement probing HashTable
 }
