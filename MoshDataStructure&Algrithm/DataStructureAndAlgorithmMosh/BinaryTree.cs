@@ -121,6 +121,56 @@ namespace BinaryTreeDemo {
 
             return 1 + Math.Max (Height (root.Left), Height (root.Right));
         }
+
+        public int FindMinValue () {
+            return FindMinValue (Root);
+        }
+
+        private int FindMinValue (Node root) {
+            if (root == null) return int.MaxValue;
+            var res = root.value;
+            var left = FindMinValue (root.Left);
+            var right = FindMinValue (root.Right);
+            if (left < res)
+                res = left;
+            if (right < res)
+                res = right;
+            return res;
+        }
+
+        public int FindMinValueInBinarySearchTree () {
+            return FindMinValueInBinarySearchTree (Root);
+        }
+
+        private int FindMinValueInBinarySearchTree (Node root) {
+            if (root == null) throw new Exception ("Min value cannot be found!");
+            var current = root.Left;
+            var last = current;
+            while (current != null) {
+                last = current;
+                current = current.Left;
+            }
+            return last.value;
+        }
+
+        public bool Equals (BinaryTree tree) {
+            return Equals (Root, tree.Root);
+        }
+
+        private bool Equals (Node first, Node second) {
+            if (first == null && second == null) return true;
+
+            if (first != null && second != null)
+                return first.value == second.value &&
+                    Equals (first.Left, second.Left) &&
+                    Equals (first.Right, second.Right);
+
+            return false;
+        }
+
+        private bool IsLeaf (Node node) {
+            return node.Left == null && node.Right == null;
+        }
         private class Node {
             public int value;
             public Node Left;

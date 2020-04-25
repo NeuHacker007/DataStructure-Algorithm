@@ -10,8 +10,18 @@ namespace DataStructureAndAlgorithmMosh {
             tree.Insert (2);
             tree.Insert (8);
             tree.Insert (10);
-            System.Console.WriteLine (tree.Height ());
+            System.Console.WriteLine (tree.FindMinValue ());
+            System.Console.WriteLine (tree.FindMinValueInBinarySearchTree ());
             System.Console.WriteLine ("done");
+            BinaryTree tree1 = new BinaryTree ();
+            tree1.Insert (5);
+            tree1.Insert (7);
+            tree1.Insert (3);
+            tree1.Insert (2);
+            tree1.Insert (8);
+            tree1.Insert (10);
+
+            System.Console.WriteLine (tree.Equals (tree1));
         }
     }
 
