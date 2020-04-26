@@ -281,6 +281,17 @@ namespace BinaryTreeDemo {
             return MaxInBinaryTree (root.Right);
         }
 
+        public bool Contains (int value) {
+            return Contains (Root, value);
+        }
+
+        private bool Contains (Node root, int value) {
+            if (root == null) return false;
+            if (root.value == value) return true;
+
+            return Contains (root.Left, value) || Contains (root.Right, value);
+        }
+
         private bool IsLeaf (Node node) {
             return node.Left == null && node.Right == null;
         }
