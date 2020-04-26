@@ -242,7 +242,7 @@ namespace BinaryTreeDemo {
         }
 
         public int CountLeafs () {
-            return CountLeafs(Root);
+            return CountLeafs (Root);
         }
 
         private int CountLeafs (Node root) {
@@ -250,6 +250,35 @@ namespace BinaryTreeDemo {
             if (IsLeaf (root)) return 1;
 
             return CountLeafs (root.Left) + CountLeafs (root.Right);
+        }
+
+        public int Max () {
+            return Max (Root);
+        }
+
+        private int Max (Node root) {
+            if (root == null) return int.MinValue;
+            var res = root.value;
+            var maxLeft = Max (root.Left);
+            var maxRight = Max (root.Right);
+
+            if (res < maxLeft) {
+                res = maxLeft;
+            }
+            if (res < maxRight) {
+                res = maxRight;
+            }
+            return res;
+        }
+
+        public int MaxInBinaryTree () {
+            return MaxInBinaryTree (Root);
+        }
+
+        private int MaxInBinaryTree (Node root) {
+            if (root.Right == null) return root.value;
+
+            return MaxInBinaryTree (root.Right);
         }
 
         private bool IsLeaf (Node node) {

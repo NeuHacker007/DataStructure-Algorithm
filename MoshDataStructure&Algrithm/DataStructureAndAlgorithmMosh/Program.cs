@@ -11,7 +11,7 @@ namespace DataStructureAndAlgorithmMosh {
             tree.Insert (2);
             tree.Insert (8);
             tree.Insert (10);
-            System.Console.WriteLine (tree.CountLeafs ());
+            System.Console.WriteLine (tree.MaxInBinaryTree ());
         }
     }
 
