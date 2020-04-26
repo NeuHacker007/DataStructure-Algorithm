@@ -87,7 +87,7 @@ namespace StackExcercise {
             return items[top1--];
         }
         public int Pop2 () {
-            if (isEmpty2 ()) throw new Exception ("Stack 1 is empty");
+            if (isEmpty2 ()) throw new Exception ("Stack 2 is empty");
             return items[top2++];
         }
 
