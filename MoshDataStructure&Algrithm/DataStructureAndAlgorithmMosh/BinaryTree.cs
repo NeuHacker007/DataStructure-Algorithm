@@ -119,8 +119,8 @@ namespace BinaryTreeDemo {
 
             // recursively call this Height until no leaf nodes
             // base case
-            if (root.Left == null && root.Right == null) return 0;
-
+            if (IsLeaf (root)) return 0;
+            // post-order traversal
             return 1 + Math.Max (Height (root.Left), Height (root.Right));
         }
 
@@ -131,6 +131,7 @@ namespace BinaryTreeDemo {
         private int FindMinValue (Node root) {
             if (root == null) return int.MaxValue;
             var res = root.value;
+            // post-order traversal
             var left = FindMinValue (root.Left);
             var right = FindMinValue (root.Right);
             if (left < res)
@@ -218,6 +219,37 @@ namespace BinaryTreeDemo {
 
             GetNodesAtKDistance (root.Left, distance - 1, list);
             GetNodesAtKDistance (root.Right, distance - 1, list);
+        }
+
+        public void LevelOrderTraversal () {
+            for (int i = 0; i < Height (); i++) {
+                var list = GetNodesAtKDistance (i);
+                foreach (var item in list) {
+                    System.Console.WriteLine (item);
+                }
+            }
+        }
+
+        public int GetSize () {
+            return GetSize (Root);
+        }
+
+        private int GetSize (Node root) {
+            if (root == null) return 0;
+            if (IsLeaf (root)) return 1;
+
+            return 1 + GetSize (root.Left) + GetSize (root.Right);
+        }
+
+        public int CountLeafs () {
+            return CountLeafs(Root);
+        }
+
+        private int CountLeafs (Node root) {
+            if (root == null) return 0;
+            if (IsLeaf (root)) return 1;
+
+            return CountLeafs (root.Left) + CountLeafs (root.Right);
         }
 
         private bool IsLeaf (Node node) {
