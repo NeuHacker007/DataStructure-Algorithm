@@ -24,6 +24,7 @@ namespace BinaryTreeDemo {
             */
 
             while (true) {
+                if (item == current.value) throw new Exception ("No Duplicate value allowed");
                 if (item < current.value) {
                     // if the left leaf node is null, we can directly put the new node here
                     if (current.Left == null) {
@@ -154,6 +155,7 @@ namespace BinaryTreeDemo {
         }
 
         public bool Equals (BinaryTree tree) {
+            if (tree == null) return false;
             return Equals (Root, tree.Root);
         }
 
@@ -161,11 +163,41 @@ namespace BinaryTreeDemo {
             if (first == null && second == null) return true;
 
             if (first != null && second != null)
+                // pre-order loop
                 return first.value == second.value &&
                     Equals (first.Left, second.Left) &&
                     Equals (first.Right, second.Right);
 
             return false;
+        }
+
+        public bool ValidateBinarySearchTree () {
+            return ValidateBinarySearchTree (Root, int.MinValue, int.MaxValue);
+        }
+
+        private bool ValidateBinarySearchTree (Node root, int min, int max) {
+
+            if (root == null) return true;
+            // pre-order loop  
+            if (root.value < min || root.value > max) return false;
+
+            return ValidateBinarySearchTree (root.Left, min, root.value - 1) && ValidateBinarySearchTree (root.Right, root.value + 1, max);
+
+        }
+
+        public void PrintNodesAtKDistance (int distance) {
+            PrintNodesAtKDistance(Root, distance);
+        }
+
+        private void PrintNodesAtKDistance (Node root, int distance) {
+            if (root == null) return;
+            if (distance == 0) {
+                System.Console.WriteLine (root.value);
+                return;
+            }
+
+            PrintNodesAtKDistance (root.Left, distance - 1);
+            PrintNodesAtKDistance (root.Right, distance - 1);
         }
 
         private bool IsLeaf (Node node) {
