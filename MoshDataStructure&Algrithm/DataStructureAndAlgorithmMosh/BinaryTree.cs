@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 namespace BinaryTreeDemo {
 
     public class BinaryTree {
@@ -186,7 +187,7 @@ namespace BinaryTreeDemo {
         }
 
         public void PrintNodesAtKDistance (int distance) {
-            PrintNodesAtKDistance(Root, distance);
+            PrintNodesAtKDistance (Root, distance);
         }
 
         private void PrintNodesAtKDistance (Node root, int distance) {
@@ -198,6 +199,25 @@ namespace BinaryTreeDemo {
 
             PrintNodesAtKDistance (root.Left, distance - 1);
             PrintNodesAtKDistance (root.Right, distance - 1);
+        }
+
+        public List<int> GetNodesAtKDistance (int distance) {
+            List<int> list = new List<int> ();
+            GetNodesAtKDistance (Root, distance, list);
+            return list;
+        }
+
+        private void GetNodesAtKDistance (Node root, int distance, List<int> list) {
+            if (root == null) return;
+
+            if (distance == 0) {
+                list.Add (root.value);
+
+                return;
+            }
+
+            GetNodesAtKDistance (root.Left, distance - 1, list);
+            GetNodesAtKDistance (root.Right, distance - 1, list);
         }
 
         private bool IsLeaf (Node node) {
