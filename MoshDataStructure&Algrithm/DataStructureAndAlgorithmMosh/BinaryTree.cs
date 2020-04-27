@@ -292,6 +292,40 @@ namespace BinaryTreeDemo {
             return Contains (root.Left, value) || Contains (root.Right, value);
         }
 
+        public bool IsSibling (int first, int second) {
+            return IsSibling (Root, first, second);
+        }
+
+        private bool IsSibling (Node root, int first, int second) {
+            if (root == null) return false;
+            var areSibling = false;
+            if (IsLeaf (root)) {
+                areSibling = (root.Left.value == first && root.Right.value == second) ||
+                    (root.Right.value == first && root.Left.value == second);
+            }
+            return areSibling || IsSibling (root.Left, first, second) || IsSibling (root.Right, first, second);
+        }
+
+        public List<int> GetAncestors (int value) {
+            List<int> list = new List<int> ();
+            GetAncestors (Root, value, list);
+            return list;
+        }
+
+        private bool GetAncestors (Node root, int value, List<int> list) {
+            if (root == null) return false;
+            if (root.value == value) return true;
+
+            if (
+                GetAncestors (root.Left, value, list) ||
+                GetAncestors (root.Right, value, list)
+            ) {
+                list.Add (root.value);
+                return true;
+            }
+            return false;
+        }
+
         private bool IsLeaf (Node node) {
             return node.Left == null && node.Right == null;
         }
