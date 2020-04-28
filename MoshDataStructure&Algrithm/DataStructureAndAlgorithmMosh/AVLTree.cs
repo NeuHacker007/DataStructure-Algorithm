@@ -45,15 +45,26 @@ namespace AVLTreeDemo {
                 root.Left = InsertRecursion (root.Left, value);
             }
             root.Height = Math.Max (GetHeight (root.Left), GetHeight (root.Right)) + 1;
-            var balanceFactor = GetHeight (root.Left) - GetHeight (root.Right);
-            if (balanceFactor > 1) {
+
+            if (IsLeftHeavy (root)) {
                 System.Console.WriteLine ($"{root.Value} is heavy");
-            } else if (balanceFactor < -1) {
+            } else if (IsRighHeavy (root)) {
                 System.Console.WriteLine ($"{root.Value} is heavy");
             }
             return root;
         }
 
+        private bool IsLeftHeavy (Node root) {
+            return GetBalanceFactor (root) > 1;
+        }
+
+        private bool IsRighHeavy (Node root) {
+            return GetBalanceFactor (root) < -1;
+        }
+
+        private int GetBalanceFactor (Node root) {
+            return (root == null) ? 0 : GetHeight (root.Left) - GetHeight (root.Right);
+        }
         private int GetHeight (Node root) {
             return (root == null) ? -1 : root.Height;
         }
