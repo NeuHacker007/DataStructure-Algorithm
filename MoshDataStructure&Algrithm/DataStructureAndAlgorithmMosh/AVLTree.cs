@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 namespace AVLTreeDemo {
     public class AVLTree {
         private Node Root;
@@ -44,6 +45,12 @@ namespace AVLTreeDemo {
                 root.Left = InsertRecursion (root.Left, value);
             }
             root.Height = Math.Max (GetHeight (root.Left), GetHeight (root.Right)) + 1;
+            var balanceFactor = GetHeight (root.Left) - GetHeight (root.Right);
+            if (balanceFactor > 1) {
+                System.Console.WriteLine ($"{root.Value} is heavy");
+            } else if (balanceFactor < -1) {
+                System.Console.WriteLine ($"{root.Value} is heavy");
+            }
             return root;
         }
 
