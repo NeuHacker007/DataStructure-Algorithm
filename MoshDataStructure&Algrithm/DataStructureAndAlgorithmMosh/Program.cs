@@ -1,11 +1,14 @@
-﻿using AVLTreeDemo;
+﻿using AVLTreeExcercise;
 namespace DataStructureAndAlgorithmMosh {
     class Program {
         static void Main (string[] args) {
-            AVLTree tree = new AVLTree ();
-            tree.InsertRecursion (10);
-            tree.InsertRecursion (30);
-            tree.InsertRecursion (20);
+            Tree tree = new Tree ();
+            tree.Insert (20);
+            tree.Insert (10);
+            tree.Insert (30);
+
+            System.Console.WriteLine (tree.IsBalanced (tree));
+            System.Console.WriteLine ("done");
 
         }
     }
