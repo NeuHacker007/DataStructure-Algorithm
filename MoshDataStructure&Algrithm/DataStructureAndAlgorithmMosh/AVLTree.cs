@@ -44,22 +44,64 @@ namespace AVLTreeDemo {
             } else if (root.Value > value) {
                 root.Left = InsertRecursion (root.Left, value);
             }
-            root.Height = Math.Max (GetHeight (root.Left), GetHeight (root.Right)) + 1;
-            Balance (root);
-            return root;
+
+            SetHeight (root);
+
+            return Balance (root);
+
         }
-        private void Balance (Node root) {
+        private Node Balance (Node root) {
             if (IsLeftHeavy (root)) {
                 if (GetBalanceFactor (root.Left) < 0) {
                     System.Console.WriteLine ($"Left Rotation - {root.Left.Value}");
+                    root.Left = RotateLeft (root.Left);
                 }
                 System.Console.WriteLine ($"Right Rotation - {root.Value}");
+                return RotateRight (root);
             } else if (IsRighHeavy (root)) {
                 if (GetBalanceFactor (root.Right) > 0) {
                     System.Console.WriteLine ($"Right Rotation - {root.Right.Value}");
+                    root.Right = RotateRight (root.Right);
                 }
                 System.Console.WriteLine ($"Left Rotation - {root.Value}");
+                return RotateLeft (root);
             }
+
+            return root;
+        }
+        // Left Rotation logic
+        // 10 (old root)  -> heavy node       ---------------------->                10 (old root)      ----> heavy node
+        //   20 (new root)                                                              20 (new root)
+        //     30                                                                    15  30
+        // newNode = root.Right                                                       newNode = root.right;
+        // newNode.left = root                                                        root.right = newNode.left
+        // recalculate the height                                                     newNode.left = root;
+        //                                                                            recalculate the height
+        private Node RotateLeft (Node root) {
+            // doing the rotation
+            var newRoot = root.Right;
+            root.Right = newRoot.Left;
+            newRoot.Left = root;
+
+            SetHeight (root);
+            SetHeight (newRoot);
+
+            return newRoot;
+        }
+
+        private Node RotateRight (Node root) {
+            var newRoot = root.Left;
+            root.Left = newRoot.Right;
+            newRoot.Right = root;
+
+            SetHeight (root);
+            SetHeight (newRoot);
+
+            return newRoot;
+        }
+
+        private void SetHeight (Node root) {
+            root.Height = Math.Max (GetHeight (root.Left), GetHeight (root.Right)) + 1;
         }
         private bool IsLeftHeavy (Node root) {
             return GetBalanceFactor (root) > 1;
