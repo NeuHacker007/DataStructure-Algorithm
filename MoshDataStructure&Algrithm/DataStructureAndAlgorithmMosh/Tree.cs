@@ -57,6 +57,8 @@ namespace AVLTreeExcercise {
             root.Height = Math.Max (GetHeight (root.Left), GetHeight (root.Right)) + 1;
         }
 
+        // TODO: Tree is perfect
+
         private class Node {
             public int Value;
             public int Height;
