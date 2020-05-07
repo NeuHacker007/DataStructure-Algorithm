@@ -16,10 +16,10 @@ namespace StackDemo {
                     if (stack.Count == 0) return false;
                     char temp = stack.Pop ();
                     if (
-                        ch == '(' && temp != ')' ||
-                        ch == '[' && temp != ']' ||
-                        ch == '<' && temp != '>' ||
-                        ch == '{' && temp != '}'
+                        ch == ')' && temp != '(' ||
+                        ch == ']' && temp != '[' ||
+                        ch == '>' && temp != '<' ||
+                        ch == '}' && temp != '{'
 
                     ) {
                         return false;
