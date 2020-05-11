@@ -1,14 +1,15 @@
-﻿using AVLTreeExcercise;
+﻿using HeapDemo;
 namespace DataStructureAndAlgorithmMosh {
     class Program {
         static void Main (string[] args) {
-            Tree tree = new Tree ();
-            tree.Insert (20);
-            tree.Insert (10);
-            tree.Insert (30);
-
-            System.Console.WriteLine (tree.IsBalanced (tree));
-            System.Console.WriteLine ("done");
+            Heap heap = new Heap(5);
+            heap.Insert(10);
+            heap.Insert(5);
+            heap.Insert(17);
+            heap.Insert(4);
+            heap.Insert(22);
+            heap.Remove();
+            System.Console.WriteLine("Done");
 
         }
     }
