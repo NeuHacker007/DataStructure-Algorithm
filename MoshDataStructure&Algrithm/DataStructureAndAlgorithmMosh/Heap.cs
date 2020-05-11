@@ -30,7 +30,6 @@ namespace HeapDemo {
         public bool IsEmpty () {
             return Size == 0;
         }
-
         private void BububleDown () {
 
             int index = 0;
