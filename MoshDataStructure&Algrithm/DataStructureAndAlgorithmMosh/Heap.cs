@@ -21,14 +21,6 @@ namespace HeapDemo {
             data[0] = data[--Size];
 
             // if current root < its children we should bubuledown
-            int index = 0;
-            while (index <= Size && !IsParentValid (index)) {
-                var largerChildIndex = GetLagerChildIndex (index);
-
-                Swap (index, largerChildIndex);
-
-                index = largerChildIndex;
-            }
 
         }
         public bool IsFull () {
@@ -37,6 +29,18 @@ namespace HeapDemo {
 
         public bool IsEmpty () {
             return Size == 0;
+        }
+
+        private void BububleDown () {
+
+            int index = 0;
+            while (index <= Size && !IsParentValid (index)) {
+                var largerChildIndex = GetLagerChildIndex (index);
+
+                Swap (index, largerChildIndex);
+
+                index = largerChildIndex;
+            }
         }
         private int GetLagerChildIndex (int index) {
             // if no left child which means no children because we fill the tree from left to right
@@ -62,12 +66,12 @@ namespace HeapDemo {
         }
 
         private bool IsParentValid (int index) {
-            if (!HasLeftChild(index)) {
+            if (!HasLeftChild (index)) {
                 return true;
             }
 
-            if (!HasRightChild(index)) {
-                return data[index] >= GetLeftChildValue(index);
+            if (!HasRightChild (index)) {
+                return data[index] >= GetLeftChildValue (index);
             }
 
             return data[index] >= GetLeftChildValue (index) &&
