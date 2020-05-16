@@ -45,4 +45,9 @@
       &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode937Tests.ReorderLogFilesWithLinq_WhenCalled_ReturnAnOrderedLogs&lt;/TestId&gt;&#xD;
     &lt;/TestAncestor&gt;&#xD;
   &lt;/Or&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f2399627_002Dcf2f_002D4a36_002D8f0c_002D81c4f1b877e3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Calculate_WhenCalled_ReturnValueOfExpression" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode227Test.Calculate_WhenCalled_ReturnValueOfExpression&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
