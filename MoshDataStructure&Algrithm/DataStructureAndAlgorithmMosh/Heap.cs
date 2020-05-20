@@ -30,6 +30,33 @@ namespace HeapDemo {
         public bool IsEmpty () {
             return Size == 0;
         }
+
+        public bool IsMaxHeap (int[] arr) {
+            if (arr == null || arr.Length == 0) return false;
+
+            return IsMaxHeap (arr, 0);
+        }
+
+        private bool IsMaxHeap (int[] arry, int index) {
+            var lastParentIndex = (arry.Length - 2) / 2;
+            //only has one node case
+            if (index > lastParentIndex) return true;
+
+            var leftChildIndex = 2 * index + 1;
+            var rightChildIndex = 2 * index + 2;
+
+            var isParentValid = IsParentValid (arry, index);
+
+            return isParentValid && IsMaxHeap (arry, leftChildIndex) && IsMaxHeap (arry, rightChildIndex);
+
+        }
+
+        private bool IsParentValid (int[] arry, int index) {
+            if (!((index * 2 + 1) <= arry.Length)) return true;
+            if (!((index * 2 + 2) <= arry.Length)) return arry[index] >= arry[index * 2 + 1];
+
+            return arry[index] >= arry[index * 2 + 1] && arry[index] >= arry[index * 2 + 2];
+        }
         private void BububleDown () {
 
             int index = 0;

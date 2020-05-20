@@ -3,7 +3,7 @@ using MaxHeapHeaplifyDemo;
 namespace DataStructureAndAlgorithmMosh {
     class Program {
         static void Main (string[] args) {
-            // Heap heap = new Heap (5);
+            Heap heap = new Heap (6);
             // heap.Insert (10);
             // heap.Insert (5);
             // heap.Insert (17);
@@ -12,7 +12,9 @@ namespace DataStructureAndAlgorithmMosh {
             // heap.Remove ();
             // System.Console.WriteLine ("Done");
             int[] numbers = new int[] { 5, 3, 8, 4, 1, 2 };
-            Maxheap.Heaplify (numbers);
+         //   Maxheap.Heaplify (numbers);
+
+            System.Console.WriteLine (heap.IsMaxHeap (numbers));
 
             System.Console.WriteLine ("Done");
         }
