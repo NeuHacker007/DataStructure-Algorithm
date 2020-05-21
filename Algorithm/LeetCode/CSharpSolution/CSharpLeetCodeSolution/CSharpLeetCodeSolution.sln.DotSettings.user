@@ -6,6 +6,11 @@
     &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode21Tests.MergeTwoLists_WhenCalled_ReturnMergedSortedList&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=204e56ca_002Dae3b_002D442e_002Db8d0_002D3c5e7ab18202/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetMostCommonWord_WhenCalled_ReturnMostFrequentWordsInParagraphAndNotInBannedListInLowerCase" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode819Tests.GetMostCommonWord_WhenCalled_ReturnMostFrequentWordsInParagraphAndNotInBannedListInLowerCase&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59b245e1_002Ddf5c_002D43e5_002D9ea3_002D327d75c383ef/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RomanToIntV1_WhenCalled_ReturnIntegerRepresentByRoman" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
     &lt;TestAncestor&gt;&#xD;
