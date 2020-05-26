@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace Solution.Tests
 {
     [TestFixture]
-    class LeetCode227Test
+    class LeetCode227Tests
     {
 
         [Test]
