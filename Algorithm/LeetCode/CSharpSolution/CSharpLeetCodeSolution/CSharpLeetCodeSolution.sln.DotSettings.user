@@ -1,4 +1,9 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=13756552_002D78eb_002D44a2_002D9227_002D08216b9bde47/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Encode_WhenCalled_ReturnUniqueTinyUrl" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode535Tests.Encode_WhenCalled_ReturnUniqueTinyUrl&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
 	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1dfb243d_002De609_002D41b5_002Dbca6_002D0f226c3fe21d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MergeTwoLists_WhenCalled_ReturnMergedSortedList" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
