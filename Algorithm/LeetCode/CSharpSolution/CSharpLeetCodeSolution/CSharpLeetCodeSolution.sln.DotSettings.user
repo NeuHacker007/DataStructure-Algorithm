@@ -60,4 +60,9 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode227Test.Calculate_WhenCalled_ReturnValueOfExpression&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f4931fe4_002D26cf_002D4f61_002D9c56_002Dfd7c8fb929b2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="OrangeRotting_WhenCalled_ReturnRottenElapseTime" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode994Tests.OrangeRotting_WhenCalled_ReturnRottenElapseTime&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

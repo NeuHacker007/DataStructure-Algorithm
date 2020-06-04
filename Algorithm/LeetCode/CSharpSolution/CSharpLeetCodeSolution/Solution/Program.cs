@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Solution
 {
@@ -7,27 +8,14 @@ namespace Solution
     {
         static void Main(string[] args)
         {
-            List<int> list = new List<int>();
+            Dictionary<int, int> dics = new Dictionary<int, int>();
+            dics.Add(1,1);
+            dics.Add(2,1);
+            dics.Add(3,1);
+            dics.Add(4,1);
+            dics.Add(5,1);
 
-            list.Add(8);
-            list.Add(6);
-            list.Add(5);
-            list.Add(4);
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                Console.WriteLine(list[i]);
-            }
-
-            Console.WriteLine("====================");
-            var temp = list[0];
-            list[0] = list[1];
-            list[1] = temp;
-
-            for (int i = 0; i < list.Count; i++)
-            {
-                Console.WriteLine(list[i]);
-            }
+            Console.WriteLine(dics.Keys.First());
 
             Console.ReadKey();
         }
