@@ -8,8 +8,6 @@ namespace Solution.Tests
     [TestFixture]
     class LeetCode5Tests
     {
-
-        //TODO: to be implemented.
         [Test]
         [TestCase("babad", "bab", "aba")]
         [TestCase("cbbd", "bb","")]
