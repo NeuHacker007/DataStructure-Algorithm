@@ -24,7 +24,7 @@ namespace Solution.Tests
         [TestCaseSource("TestCases")]
         public void Get3Sum_WhenCalled_ReturnElementsMadeSumToZero(int[] nums, IList<IList<int>> expectedResult)
         {
-            var result = LeetCode15.Get3Sum(nums);
+            var result = LeetCode15.ThreeSum(nums);
 
             Assert.That(result, Is.EquivalentTo(expectedResult));
         }

@@ -38,11 +38,9 @@ namespace Solution
                 list1.Next = MergeTwoList(list1.Next, list2);
                 return list1;
             }
-            else
-            {
-                list2.Next = MergeTwoList(list1, list2.Next);
-                return list2;
-            }
+
+            list2.Next = MergeTwoList(list1, list2.Next);
+            return list2;
         }
 
         // time complexity (O(M x N))
@@ -50,31 +48,30 @@ namespace Solution
         // a few pointers, so it has a constant overall memory footprint.
         public static ListNodeLc21 MergeTwoListV2(ListNodeLc21 list1, ListNodeLc21 list2)
         {
-            //TODO: Failed the test case
-            //    ListNodeLc21 dummyHead = new ListNodeLc21(-1);
 
-            //    var prev = dummyHead;
+            //ListNodeLc21 dummyHead = new ListNodeLc21(-1);
 
-            //    while (list1 != null && list2 != null)
+            //var prev = dummyHead;
+
+            //while (list1 != null && list2 != null)
+            //{
+            //    if (list1.Value <= list2.Value)
             //    {
-            //        if (list1.Valueue <= list2.Valueue)
-            //        {
-            //            prev.Next = list1;
-            //            list1 = list1.Next;
-            //        }
-            //        else
-            //        {
-            //            prev.Next = list2;
-            //            list2 = list2.Next;
-            //        }
-
-            //        prev = prev.Next;
+            //        prev.Next = list1;
+            //        list1 = list1.Next;
+            //    }
+            //    else
+            //    {
+            //        prev.Next = list2;
+            //        list2 = list2.Next;
             //    }
 
-            //    prev.Next = list1 == null ? list2 : list1;
-
-            //    return prev.Next;
+            //    prev = prev.Next;
             //}
+
+            //prev.Next = list1 == null ? list2 : list1;
+
+            //return prev.Next;
 
             ListNodeLc21 prehead = new ListNodeLc21(-1);
 
@@ -100,7 +97,9 @@ namespace Solution
             prev.Next = list1 ?? list2;
 
             return prehead.Next;
-
         }
+
+
+
     }
 }

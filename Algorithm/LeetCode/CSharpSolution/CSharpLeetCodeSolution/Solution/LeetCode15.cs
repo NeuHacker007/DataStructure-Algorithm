@@ -6,47 +6,58 @@ namespace Solution
 {
     public class LeetCode15
     {
-        public static IList<IList<int>> Get3Sum(int[] nums)
+        //Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+
+        //    Note:
+
+        //The solution set must not contain duplicate triplets.
+
+        //    Example:
+
+        //Given array nums = [-1, 0, 1, 2, -1, -4],
+
+        //A solution set is:
+        //[
+        //[-1, 0, 1],
+        //[-1, -1, 2]
+        //]
+
+        // TODO: Test case fails, missing a result in result set
+        public static IList<IList<int>> ThreeSum(int[] nums)
         {
             Array.Sort(nums);
-            IList<IList<int>> result = new List<IList<int>>();
-
+            var result = new List<IList<int>>();
             for (int i = 0; i < nums.Length && nums[i] <= 0; ++i)
             {
                 if (i == 0 || nums[i - 1] != nums[i])
                 {
-                    TwoSum(nums, i, result);
+                    twoSumII(nums, i, result);
                 }
             }
-
             return result;
         }
 
-
-        private static void TwoSum(int[] nums, int index, IList<IList<int>> resultList)
+        private static void twoSumII(int[] nums, int i, List<IList<int>> result)
         {
-            // TODO fix the test failure
-            int low = index + 1;
+            int low = i + 1;
             int high = nums.Length - 1;
 
             while (low < high)
             {
-                int sum = nums[index] + nums[low] + nums[high];
-                if (sum < 0 || low > (index + 1) && nums[low] == nums[low - 1])
-                {
+                int sum = nums[i] + nums[low] + nums[high];
+                if (sum < 0 || (low > (i + 1) && nums[low] == nums[low - 1]))
                     low++;
-                } else if (sum > 0 || high < nums.Length - 1 && nums[high] == nums[high + 1])
+                else if (sum > 0 || high < nums.Length - 1 && nums[high] == nums[high + 1])
                 {
                     high--;
                 }
                 else
                 {
                     List<int> temp = new List<int>();
-                    temp.Add(nums[index]);
+                    temp.Add(nums[i]);
                     temp.Add(nums[low++]);
                     temp.Add(nums[high--]);
-
-                    resultList.Add(temp);
+                    result.Add(temp);
                 }
             }
         }

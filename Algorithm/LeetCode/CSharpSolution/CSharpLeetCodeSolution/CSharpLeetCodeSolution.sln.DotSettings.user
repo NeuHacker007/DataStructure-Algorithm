@@ -1,36 +1,11 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=13756552_002D78eb_002D44a2_002D9227_002D08216b9bde47/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Encode_WhenCalled_ReturnUniqueTinyUrl" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode535Tests.Encode_WhenCalled_ReturnUniqueTinyUrl&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
 	
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1dfb243d_002De609_002D41b5_002Dbca6_002D0f226c3fe21d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="MergeTwoLists_WhenCalled_ReturnMergedSortedList" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode21Tests.MergeTwoLists_WhenCalled_ReturnMergedSortedList&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=204e56ca_002Dae3b_002D442e_002Db8d0_002D3c5e7ab18202/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetMostCommonWord_WhenCalled_ReturnMostFrequentWordsInParagraphAndNotInBannedListInLowerCase" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode819Tests.GetMostCommonWord_WhenCalled_ReturnMostFrequentWordsInParagraphAndNotInBannedListInLowerCase&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=59b245e1_002Ddf5c_002D43e5_002D9ea3_002D327d75c383ef/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="RomanToIntV1_WhenCalled_ReturnIntegerRepresentByRoman" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Or&gt;&#xD;
-    &lt;TestAncestor&gt;&#xD;
-      &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode13Tests.RomanToIntV1_WhenCalled_ReturnIntegerRepresentByRoman&lt;/TestId&gt;&#xD;
-    &lt;/TestAncestor&gt;&#xD;
-    &lt;TestAncestor&gt;&#xD;
-      &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode12Tests.intToRomanV1_WhenCalled_ReturnRomanNumber&lt;/TestId&gt;&#xD;
-    &lt;/TestAncestor&gt;&#xD;
-  &lt;/Or&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7c17acf0_002D4a4d_002D4286_002D9cb7_002D2739d672614d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetLongestPalindromicStr" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode5Tests.GetLongestPalindromicStr&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=9425f456_002D13a8_002D46fb_002D8efa_002Dfbb8cd1995d4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ArraysIntersection_3IntegerArray_ReturnCommonInteger" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
     &lt;Or&gt;&#xD;
@@ -61,13 +36,5 @@
     &lt;/TestAncestor&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f2399627_002Dcf2f_002D4a36_002D8f0c_002D81c4f1b877e3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Calculate_WhenCalled_ReturnValueOfExpression" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode227Test.Calculate_WhenCalled_ReturnValueOfExpression&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f4931fe4_002D26cf_002D4f61_002D9c56_002Dfd7c8fb929b2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="OrangeRotting_WhenCalled_ReturnRottenElapseTime" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode994Tests.OrangeRotting_WhenCalled_ReturnRottenElapseTime&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+	
+	</wpf:ResourceDictionary>
