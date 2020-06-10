@@ -1,12 +1,11 @@
 using System;
+using System.Collections.Generic;
 
 namespace TrieDemo {
     public class Trie {
-        public static readonly int ALPHABET_SIZE = 26;
         private class Node {
             public char Value;
-            public Node[] Children = new Node[ALPHABET_SIZE];
-
+            public Dictionary<char, Node> Children = new Dictionary<char, Node>();
             public bool IsEndOfWord;
 
             public Node (char value) {
@@ -25,11 +24,10 @@ namespace TrieDemo {
             var current = _root;
 
             foreach (var ch in word) {
-                var index = ch - 'a';
-                if (current.Children[index] == null) {
-                    current.Children[index] = new Node (ch);
+                if (current.Children[ch] == null) {
+                    current.Children.Add(ch, new Node(ch));
                 }
-                current = current.Children[index];
+                current = current.Children[ch];
             }
 
             current.IsEndOfWord = true;
