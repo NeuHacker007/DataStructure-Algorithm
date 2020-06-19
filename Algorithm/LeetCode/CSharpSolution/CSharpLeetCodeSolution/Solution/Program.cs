@@ -8,7 +8,7 @@ namespace Solution
     {
         static void Main(string[] args)
         {
-            LeetCode5.GetLongestPalindromicStr("babad");
+            LeetCode763.PartitionLabels("ababcbacadefegdehijhklij");
             Console.ReadKey();
         }
     }
