@@ -19,7 +19,7 @@ namespace TrieDemo {
                 Children.Add (ch, new Node (ch));
             }
 
-            public Node GetChild(char ch) {
+            public Node GetChild (char ch) {
                 return Children[ch];
             }
 
@@ -35,15 +35,30 @@ namespace TrieDemo {
             var current = _root;
 
             foreach (var ch in word) {
-                if (!current.HasChild(ch)) {
-                    current.AddChild(ch);
+                if (!current.HasChild (ch)) {
+                    current.AddChild (ch);
                 }
-                current = current.GetChild(ch);
+                current = current.GetChild (ch);
             }
 
             current.IsEndOfWord = true;
 
         }
 
+        public bool Contains (string word) {
+
+            if (string.IsNullOrWhiteSpace (word)) return false;
+
+            var current = _root;
+
+            foreach (var ch in word) {
+                if (!current.HasChild (ch)) {
+                    return false;
+                } else {
+                    current = current.GetChild (ch);
+                }
+            }
+            return current.IsEndOfWord;
+        }
     }
 }
