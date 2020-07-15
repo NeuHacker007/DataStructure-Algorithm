@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 
 namespace TrieDemo {
+    public enum TraverseOrder {
+        PreOrder,
+        PostOrder
+    }
     public class Trie {
         private class Node {
             public char Value;
@@ -22,7 +26,11 @@ namespace TrieDemo {
             public Node GetChild (char ch) {
                 return Children[ch];
             }
+            public Node[] GetChildren () {
 
+                var result = new List<Node> (Children.Values);
+                return result.ToArray ();
+            }
             public override string ToString () {
                 return "Value=" + Value;
             }
@@ -59,6 +67,37 @@ namespace TrieDemo {
                 }
             }
             return current.IsEndOfWord;
+        }
+
+        public void Traverse (TraverseOrder order = TraverseOrder.PreOrder) {
+
+            switch (order) {
+                case TraverseOrder.PreOrder:
+                    PreTraverse (_root);
+                    break;
+                case TraverseOrder.PostOrder:
+                    PostTraverse (_root);
+                    break;
+
+            }
+
+        }
+
+        private void PreTraverse (Node root) {
+            // PreOrder
+            System.Console.WriteLine (root.Value);
+
+            foreach (var child in root.GetChildren ()) {
+                PreTraverse (child);
+            }
+        }
+        private void PostTraverse (Node root) {
+            // Post Order
+            foreach (var child in root.GetChildren ()) {
+                PostTraverse (child);
+            }
+
+            System.Console.WriteLine (root.Value);
         }
     }
 }
