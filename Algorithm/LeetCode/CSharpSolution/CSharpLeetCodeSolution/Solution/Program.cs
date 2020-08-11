@@ -8,7 +8,7 @@ namespace Solution
     {
         static void Main(string[] args)
         {
-            LeetCode763.PartitionLabels("ababcbacadefegdehijhklij");
+            LeetCode953.IsAlienSorted(new string[] { "hello", "leetcode" }, "hlabcdefgijkmnopqrstuvwxyz");
             Console.ReadKey();
         }
     }
