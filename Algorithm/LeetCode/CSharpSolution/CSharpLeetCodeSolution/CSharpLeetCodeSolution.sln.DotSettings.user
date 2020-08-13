@@ -41,5 +41,10 @@
     &lt;/TestAncestor&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b60828b4_002De906_002D4979_002Dbf34_002Daf8519d470bd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="SubArraySumBruteForce_ReturnCount" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::A0B0308F-6D98-4492-A9A7-505814E708C4::.NETCoreApp,Version=v3.1::Solution.Tests.LeetCode560Tests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	
 	</wpf:ResourceDictionary>
