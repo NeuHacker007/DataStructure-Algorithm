@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Solution.L509_Fibonacci_Num_Easy;
 
 namespace Solution
 {
@@ -8,7 +9,8 @@ namespace Solution
     {
         static void Main(string[] args)
         {
-            LeetCode953.IsAlienSorted(new string[] { "hello", "leetcode" }, "hlabcdefgijkmnopqrstuvwxyz");
+            Console.WriteLine(LeetCode509.GetFibonacciNumDPEquation(3));
+
             Console.ReadKey();
         }
     }
