@@ -13,7 +13,7 @@ and all parent nodes),
 
 ![](tree2.png)
 
-# Prefix Sum: How to Use: Number of Continuous Subarrays that Sum to Target
+##### Prefix Sum: How to Use: Number of Continuous Subarrays that Sum to Target
 
 You might want to use the prefix sum technique for the problems like "Find a number of continuous subarrays/submatrices/tree paths that sum to target".
 
