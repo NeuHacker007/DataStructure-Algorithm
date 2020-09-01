@@ -4,13 +4,14 @@ namespace DataStructureAndAlgorithmMosh {
         static void Main (string[] args) {
 
             Trie trie = new Trie ();
-            trie.Insert ("canada");
-            //System.Console.WriteLine(trie.Contains("Canada"));
-            trie.Traverse ();
-            System.Console.WriteLine ("===========================");
-            trie.Traverse (TraverseOrder.PostOrder);
-            System.Console.WriteLine ("Done");
-        }
-    }
+            trie.Insert ("car");
+            trie.Insert ("care");
+            trie.RemoveWord ("care");
+            trie.RemoveWord ("car");
 
+            System.Console.WriteLine (trie.Contains ("car"));
+            System.Console.WriteLine (trie.Contains ("care"));
+        }
+
+    }
 }

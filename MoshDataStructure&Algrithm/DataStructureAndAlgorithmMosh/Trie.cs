@@ -31,6 +31,13 @@ namespace TrieDemo {
                 var result = new List<Node> (Children.Values);
                 return result.ToArray ();
             }
+
+            public bool HasChildren () {
+                return Children.Count != 0;
+            }
+            public void RemoveChild (char ch) {
+                Children.Remove (ch);
+            }
             public override string ToString () {
                 return "Value=" + Value;
             }
@@ -98,6 +105,34 @@ namespace TrieDemo {
             }
 
             System.Console.WriteLine (root.Value);
+        }
+
+        public void RemoveWord (string word) {
+            if (word == null) return;
+
+            RemoveWord (_root, word, 0);
+        }
+
+        private void RemoveWord (Node root, string word, int index) {
+            if (index < 0 || index > word.Length) throw new ArgumentOutOfRangeException ("Index is out of range");
+            // if index == word.Length, this is the last charactor, we need set isendofword = false;
+            if (index == word.Length) {
+                root.IsEndOfWord = false;
+                return;
+            }
+            // get the ch of the index in the word 
+            var ch = word[index];
+            var child = root.GetChild (ch);
+
+            if (child == null) return;
+
+            RemoveWord (child, word, index + 1);
+            // remove the node physically 
+
+            if (!child.HasChildren () && !child.IsEndOfWord) {
+                root.RemoveChild (ch);
+            }
+
         }
     }
 }
