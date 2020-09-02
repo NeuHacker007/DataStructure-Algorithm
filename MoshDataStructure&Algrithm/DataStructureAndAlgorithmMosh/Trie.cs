@@ -76,6 +76,23 @@ namespace TrieDemo {
             return current.IsEndOfWord;
         }
 
+        public bool ContainsRecursive (string word) {
+            return ContainsRecursive (_root, word, 0);
+        }
+
+        private bool ContainsRecursive (Node root, string word, int index) {
+
+            if (index == word.Length) return root.IsEndOfWord;
+
+            if (root == null) return false;
+
+            var ch = word[index];
+            var child = root.GetChild (ch);
+
+            if (child == null) return false;
+
+            return ContainsRecursive (child, word, index + 1); 
+        }
         public void Traverse (TraverseOrder order = TraverseOrder.PreOrder) {
 
             switch (order) {
@@ -133,6 +150,39 @@ namespace TrieDemo {
                 root.RemoveChild (ch);
             }
 
+        }
+
+        public List<string> FindWords (string prefix) {
+            var lastNode = FindLastNodeOf (prefix);
+            var words = new List<string> ();
+            FindWords (lastNode, prefix, words);
+
+            return words;
+        }
+
+        private void FindWords (Node root, string prefix, List<string> words) {
+            if (root == null) return;
+            if (root.IsEndOfWord) {
+                words.Add (prefix);
+            }
+
+            foreach (var child in root.GetChildren ()) {
+                FindWords (child, prefix + child.Value, words);
+            }
+        }
+
+        private Node FindLastNodeOf (string prefix) {
+            if (prefix == null) return null;
+            var current = _root;
+
+            foreach (var ch in prefix) {
+                var child = current.GetChild (ch);
+                if (child == null) {
+                    return null;
+                }
+                current = child;
+            }
+            return current;
         }
     }
 }
