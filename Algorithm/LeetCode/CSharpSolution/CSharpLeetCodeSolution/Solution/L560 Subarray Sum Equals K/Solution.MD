@@ -2,7 +2,7 @@
 Algorithm
 
 The simplest method is to consider every possible subarray of the given numsnums array, find the sum of the elements of each of those subarrays and check for the equality of the sum obtained with the given kk. Whenver the sum equals kk, we can increment the countcount used to store the required result.
-`
+```Java
 public class Solution {
     public int subarraySum(int[] nums, int k) {
         int count = 0;
@@ -18,7 +18,7 @@ public class Solution {
         return count;
     }
 }
-`
+```
 
 Complexity Analysis
 
@@ -42,7 +42,7 @@ In this implementation, we make use of a cumulative sum array, sumsum, such that
 th
   index. Thus, to determine the sum of elements for the subarray nums[i:j]nums[i:j], we can directly use sum[j+1] - sum[i]sum[j+1]−sum[i].
 
-`
+```Java
 public class Solution {
     public int subarraySum(int[] nums, int k) {
         int count = 0;
@@ -59,7 +59,7 @@ public class Solution {
         return count;
     }
 }
-`
+```
 
 Complexity Analysis
 
@@ -76,7 +76,7 @@ Approach 3: Without Space
 Algorithm
 
 Instead of considering all the startstart and endend points and then finding the sum for each subarray corresponding to those points, we can directly find the sum on the go while considering different endend points. i.e. We can choose a particular startstart point and while iterating over the endend points, we can add the element corresponding to the endend point to the sum formed till now. Whenver the sumsum equals the required kk value, we can update the countcount value. We do so while iterating over all the endend indices possible for every startstart index. Whenver, we update the startstart index, we need to reset the sumsum value to 0.
-`
+```Java
 public class Solution {
     public int subarraySum(int[] nums, int k) {
         int count = 0;
@@ -91,7 +91,7 @@ public class Solution {
         return count;
     }
 }
-`
+```
 
  **Complexity Analysis**
 Time complexity : O(n^2)O(n 
@@ -118,7 +118,7 @@ i
 
 After the complete array has been traversed, the countcount gives the required result.
 
-`
+```Java
 public class Solution {
     public int subarraySum(int[] nums, int k) {
         int count = 0, sum = 0;
@@ -133,7 +133,7 @@ public class Solution {
         return count;
     }
 }
-`
+```
 
 Current
 1 / 9
