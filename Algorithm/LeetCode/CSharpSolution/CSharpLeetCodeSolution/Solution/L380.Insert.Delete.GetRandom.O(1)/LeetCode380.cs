@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Solution.L380_Insert_Delete_GetRandom_O_1_
-{
+namespace Solution {
     //    Design a data structure that supports all following operations in average O(1) time.
     //    insert(val): Inserts an item val to the set if not already present.
     //    remove(val): Removes an item val from the set if present.
@@ -31,11 +30,7 @@ namespace Solution.L380_Insert_Delete_GetRandom_O_1_
 
     //// Since 2 is the only number in the set, getRandom always return 2.
     //    randomSet.getRandom();
-    public class LeetCode380
-    {
-    }
-
-
+    public class LeetCode380 { }
 
     /**
      * Your RandomizedSet object will be instantiated and called as such:

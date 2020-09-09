@@ -1,4 +1,4 @@
-namespace Solution.L437.Path.Sum.III.Medium {
+namespace Solution {
     public class LeetCode437Node {
         public int val;
         public LeetCode437Node left;
@@ -10,26 +10,26 @@ namespace Solution.L437.Path.Sum.III.Medium {
         }
     }
     public class LeetCode437 {
-        public static int PathSum(LeetCode437Node root, int sum) {
+        public static int PathSum (LeetCode437Node root, int sum) {
             if (root == null) return 0;
-            var pathLeadingCount = Count(root, sum);
-            
-            var leftPathSum = PathSum(root.left, sum);
-           
-            var rightPathSum = PathSum(root.right, sum);
+            var pathLeadingCount = Count (root, sum);
+
+            var leftPathSum = PathSum (root.left, sum);
+
+            var rightPathSum = PathSum (root.right, sum);
 
             return pathLeadingCount + leftPathSum + rightPathSum;
         }
 
-        private static int Count(LeetCode437Node root, int sum) {
+        private static int Count (LeetCode437Node root, int sum) {
             if (root == null) return 0;
 
-            var baseVal =  root.val == sum ? 1 : 0;
+            var baseVal = root.val == sum ? 1 : 0;
 
-            var left = Count(root.left, sum - root.val);
-            var right = Count(root.right, sum - root.val);
+            var left = Count (root.left, sum - root.val);
+            var right = Count (root.right, sum - root.val);
 
-            return baseVal + left + right;  
+            return baseVal + left + right;
         }
     }
 }
