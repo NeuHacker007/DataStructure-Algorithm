@@ -113,9 +113,15 @@ class Solution {
 
 **Complexity Analysis**
 
-* Time complexity : \mathcal{O}(n)O(n)
-
+* Time complexity : 
+    $$
+    \mathcal O(n)
+    $$
     For every subtree, we compute its height in constant time as well as compare the height of its children.
 
-* Space complexity : \mathcal{O}(n)O(n). The recursion stack may go up to \mathcal{O}(n)O(n) if the tree is unbalanced.
+* Space complexity : 
+    $$
+    \mathcal O(n)
+    $$
+    . The recursion stack may go up to   if the tree is unbalanced.
 
