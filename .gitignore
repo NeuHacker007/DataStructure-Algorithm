@@ -26,3 +26,5 @@ MoshDataStructure&Algrithm/mosh-algorithm.code-workspace
 /Algorithm/LeetCode/CSharpSolution/CSharpLeetCodeSolution/Solution.Tests/bin
 /Algorithm/LeetCode/CSharpSolution/CSharpLeetCodeSolution/Solution.Tests/obj
 /Algorithm/LeetCode/CSharpSolution/CSharpLeetCodeSolution/.vs
+*.vscode 
+*.user 
