@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+ * Author: yf.eva.yifan@gmail.com
+ * Date: 11-25-2020 08:43:18
+ * LastEditTime: 11-27-2020 20:29:44
+ * FilePath: \CSharpLeetCodeSolution\Solution\L.953.Verifying.An.Alien.Dictionary.Easy\LeetCode953.cs
+ * Description: 
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,38 +16,38 @@ namespace Solution
         //TODO: Logic is not correct, need to be fixed.
         public static bool IsAlienSorted(string[] words, string order)
         {
-            var index = new int[26];
+            // var index = new int[26];
 
-            for (int i = 0; i < order.Length; ++i)
-            {
-                index[order[i] - 'a'] = i;
-            }
+            // for (int i = 0; i < order.Length; ++i)
+            // {
+            //     index[order[i] - 'a'] = i;
+            // }
 
-            for (int i = 0; i < words.Length - 1; i++)
-            {
-                var word1 = words[i];
+            // for (int i = 0; i < words.Length - 1; i++)
+            // {
+            //     var word1 = words[i];
 
-                var word2 = words[i + 1];
+            //     var word2 = words[i + 1];
 
-                for (int j = 0; j < Math.Min(word1.Length, word2.Length); j++)
-                {
-                    if (word1[j] != word2[j])
-                    {
-                        if (index[word1[j] - 'a'] < index[word2[j] - 'a'])
-                        {
-                            return false;
-                        }
-                    }
+            //     for (int j = 0; j < Math.Min(word1.Length, word2.Length); j++)
+            //     {
+            //         if (word1[j] != word2[j])
+            //         {
+            //             if (index[word1[j] - 'a'] < index[word2[j] - 'a'])
+            //             {
+            //                 return false;
+            //             }
+            //         }
 
-                    break;
-                }
+            //         break;
+            //     }
 
-                if (word1.Length > word2.Length)
-                {
-                    return false;
-                }
+            //     if (word1.Length > word2.Length)
+            //     {
+            //         return false;
+            //     }
 
-            }
+            // }
 
             return false;
         }
