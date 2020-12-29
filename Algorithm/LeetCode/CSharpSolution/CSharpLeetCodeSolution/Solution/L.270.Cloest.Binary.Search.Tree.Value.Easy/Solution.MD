@@ -6,7 +6,7 @@
 
 The simplest approach (3 lines in Python) is to build inorder traversal and then find the closest element in a sorted array with built-in function `min`.
 
-![](dummy.png)
+![](img/dummy.png)
 This approach is simple stupid, and serves to identify the subproblems.
 
 **Algorithm**
@@ -41,8 +41,8 @@ class Solution {
 
 Complexity Analysis
 
-* Time complexity : \mathcal{O}(N)O(N) because to build inorder traversal and then to perform linear search takes linear time.
-* Space complexity : \mathcal{O}(N)O(N) to keep inorder traversal.
+* Time complexity : O(N) because to build inorder traversal and then to perform linear search takes linear time.
+* Space complexity : O(N) to keep inorder traversal.
 
 ---
 
@@ -56,7 +56,7 @@ First, one could merge both steps by traversing the tree and searching the close
 
 Second, one could stop just after identifying the closest value, there is no need to traverse the whole tree. The closest value is found if the target value is in-between of two inorder array elements `nums[i] <= target < nums[i + 1]`. Then the closest value is one of these elements.
 
-![](iteration.png)
+![](img/iteration.png)
 
 **Algorithm**
 
@@ -100,11 +100,11 @@ class Solution {
 
 **Complexity Analysis**
 
-* Time complexity : \mathcal{O}(k)O(k) in the average case and \mathcal{O}(H + k)O(H+k) in the worst case, where k is an index of closest element. It's known that [average case is a balanced tree](https://pages.cpsc.ucalgary.ca/~jacobs/Courses/cpsc331/F08/notes/lecture17.pdf), in that case stack always contains a few elements, and hence one does 2k2k operations to go to kth element in inorder traversal (k times to push into stack and then k times to pop out of stack). That results in \mathcal{O}(k)O(k) time complexity. The worst case is a completely unbalanced tree, then you first push H elements into stack and then pop out k elements, that results in \mathcal{O}(H + k)O(H+k) time complexity.
+* Time complexity : O(k) in the average case and O(H+k) in the worst case, where k is an index of closest element. It's known that [average case is a balanced tree](https://pages.cpsc.ucalgary.ca/~jacobs/Courses/cpsc331/F08/notes/lecture17.pdf), in that case stack always contains a few elements, and hence one does 2k2k operations to go to kth element in inorder traversal (k times to push into stack and then k times to pop out of stack). That results in O(k) time complexity. The worst case is a completely unbalanced tree, then you first push H elements into stack and then pop out k elements, that results in O(H+k) time complexity.
 
-![](unbalanced.png)
+![](img/unbalanced.png)
 
-* Space complexity : up to \mathcal{O}(H)O(H) to keep the stack in the case of non-balanced tree.
+* Space complexity : up to O(H) to keep the stack in the case of non-balanced tree.
 
 
 ---
@@ -119,7 +119,7 @@ Let's now consider another limit and optimise Approach 1 in the case of relative
 
 Then it makes sense to use a binary search: go left if target is smaller than current root value, and go right otherwise. Choose the closest to target value at each step.
 
-![](binary.png)
+![](img/binary.png)
 
 ```java
 class Solution {
@@ -136,6 +136,6 @@ class Solution {
 ```
 **Complexity Analysis**
 
-* Time complexity : \mathcal{O}(H)O(H) since here one goes from root down to a leaf.
+* Time complexity : O(H) since here one goes from root down to a leaf.
 
-* Space complexity : \mathcal{O}(1)O(1).
+* Space complexity : O(1).
