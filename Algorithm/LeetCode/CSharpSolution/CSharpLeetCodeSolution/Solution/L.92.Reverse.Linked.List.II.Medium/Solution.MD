@@ -223,3 +223,10 @@ class Solution {
 
 - Time Complexity: O(N)*O*(*N*) considering the list consists of N*N* nodes. We process each of the nodes at most once (we don't process the nodes after the n^{th}*n**t**h* node from the beginning.
 - Space Complexity: O(1)*O*(1) since we simply adjust some pointers in the original linked list and only use O(1)*O*(1) additional memory for achieving the final result.
+
+----
+
+#### Approach 3: Recursion 
+
+[递归反转链表的一部分]([递归反转链表的一部分 - labuladong的算法小抄 (gitbook.io)](https://labuladong.gitbook.io/algo/mu-lu-ye-1/mu-lu-ye/di-gui-fan-zhuan-lian-biao-de-yi-bu-fen))
+
