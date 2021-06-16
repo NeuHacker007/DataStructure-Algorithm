@@ -1,13 +1,13 @@
 /**
  * Author: yf.eva.yifan@gmail.com
  * Date: 12-11-2020 14:23:13
- * LastEditTime: 12-11-2020 14:30:18
+ * LastEditTime: 06-15-2021 20:49:35
  * FilePath: \CSharpLeetCodeSolution\Solution\L.116.Populating.Next.Right.Pointers.In.Each.Node.Medium\LeetCode116.cs
  * Description: 
  */
 using System.Collections.Generic;
 
-namespace Solution
+namespace LcTreeSolution
 {
     public class LeetCode116Node
     {
