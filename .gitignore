@@ -29,3 +29,5 @@ MoshDataStructure&Algrithm/mosh-algorithm.code-workspace
 *.vscode 
 *.user 
 /Algorithm/LeetCode/CSharpSolution/CSharpLeetCodeSolution/.vscode
+/Algorithm/LeetCode/CSharpSolution/CSharpLeetCodeSolution/AmazonOnlineOA/obj/Debug/net5.0
+/Algorithm/LeetCode/CSharpSolution/CSharpLeetCodeSolution/AmazonOnlineOA/obj
