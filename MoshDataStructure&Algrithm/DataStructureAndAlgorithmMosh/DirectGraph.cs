@@ -62,7 +62,7 @@ namespace DataStructureAndAlgorithmMosh
             {
                 adjacentList[item].Remove(node);
             }
-
+            
             adjacentList.Remove(node);
 
             nodes.Remove(label);
