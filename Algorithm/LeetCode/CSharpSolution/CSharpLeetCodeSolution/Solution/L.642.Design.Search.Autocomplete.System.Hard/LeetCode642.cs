@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Solution
 {
-    public class AutocompleteSystem
+    public class LeetCode642
     {
         //TODO: Add the problem.MD and Solution.MD
         public class TrieNode : IComparable<TrieNode>
@@ -56,7 +56,7 @@ namespace Solution
         private TrieNode curr;
         private StringBuilder sb; //used to preserve the sentence in each trie branch
 
-        public AutocompleteSystem(string[] sentences, int[] times)
+        public LeetCode642(string[] sentences, int[] times)
         {
             root = new TrieNode();
             curr = root;
