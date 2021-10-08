@@ -1,7 +1,7 @@
 /**
  * Author: yf.eva.yifan@gmail.com
  * Date: 10-06-2021 14:22:09
- * LastEditTime: 10-06-2021 20:45:25
+ * LastEditTime: 10-08-2021 19:54:40
  * FilePath: \CSharpLeetCodeSolution\Solution\L.127.Word.Ladder.Hard\LeetCode127.cs
  * Description: 
  */
@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 namespace GraphSolution
 {
-    //TODO: Add Problem.MD and Solution.MD
+
     public class LeetCode127
     {
         public int LadderLength(string beginWord, string endWord, IList<string> wordList)
