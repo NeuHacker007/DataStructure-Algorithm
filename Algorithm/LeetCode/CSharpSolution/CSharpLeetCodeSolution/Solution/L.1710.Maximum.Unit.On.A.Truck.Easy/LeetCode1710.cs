@@ -1,7 +1,7 @@
 /**
  * Author: yf.eva.yifan@gmail.com
  * Date: 10-05-2021 09:30:42
- * LastEditTime: 10-05-2021 09:38:03
+ * LastEditTime: 10-08-2021 20:06:12
  * FilePath: \CSharpLeetCodeSolution\Solution\L.1710.Maximum.Unit.On.A.Truck.Easy\LeetCode1710.cs
  * Description: 
  */
@@ -9,7 +9,6 @@ using System;
 using System.Linq;
 namespace Solution
 {
-    //TODO: add problem.MD and Solution.MD
     public class LeetCode1710
     {
         public static int MaximumUnits(int[][] boxTypes, int truckSize)
