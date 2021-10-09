@@ -1,14 +1,13 @@
 /**
  * Author: yf.eva.yifan@gmail.com
  * Date: 10-04-2021 22:14:37
- * LastEditTime: 10-04-2021 22:44:16
+ * LastEditTime: 10-08-2021 20:07:10
  * FilePath: \CSharpLeetCodeSolution\Solution\L.273.Integer.To.English.Words.Hard\LeetCode273.cs
  * Description: 
  */
 
 namespace Solution
 {
-    //TODO: Add Problem.MD and Solution.MD
     public class LeetCode273
     {
 
