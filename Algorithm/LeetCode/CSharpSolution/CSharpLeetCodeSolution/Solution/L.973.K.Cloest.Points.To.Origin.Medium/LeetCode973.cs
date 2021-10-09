@@ -1,7 +1,7 @@
 /**
  * Author: yf.eva.yifan@gmail.com
  * Date: 10-07-2021 16:12:30
- * LastEditTime: 10-07-2021 16:14:54
+ * LastEditTime: 10-08-2021 20:10:37
  * FilePath: \CSharpLeetCodeSolution\Solution\L.973.K.Cloest.Points.To.Origin.Medium\LeetCode973.cs
  * Description: 
  */
@@ -12,7 +12,6 @@ using System.Linq;
 
 namespace ArraySolution
 {
-    //TODO: Add the Problem.MD and Solution.MD 
     public class LeetCode973
     {
         public static int[][] KClosest(int[][] points, int k)
