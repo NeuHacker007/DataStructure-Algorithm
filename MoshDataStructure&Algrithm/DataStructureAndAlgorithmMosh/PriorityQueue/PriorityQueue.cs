@@ -15,8 +15,22 @@ namespace DataStructureAndAlgorithmMosh.PriorityQueue
         }
         public void Add(T item)
         {
+            if (IsFull())
+            {
+                throw new Exception("queue is full");
+            }
+
+            var positionToInsert = ShiftItemsForInsert(item);
+
+            _items[positionToInsert] = item;
+            _count++;
+
+        }
+
+        private int ShiftItemsForInsert(T item)
+        {
             int i;
-            for ( i = _count -1; i >=0; i--)
+            for (i = _count - 1; i >= 0; i--)
             {
                 if (Comparer<T>.Default.Compare(_items[i], item) > 0)
                 {
@@ -26,16 +40,17 @@ namespace DataStructureAndAlgorithmMosh.PriorityQueue
                 {
                     break;
                 }
-                
             }
 
-            _items[i + 1] = item;
-            _count++;
-
+            return i + 1;
         }
 
         public T Remove()
         {
+            if (IsEmpty())
+            {
+                throw new Exception("Queue is empty");
+            }
             return _items[--_count];
         }
 
@@ -44,19 +59,27 @@ namespace DataStructureAndAlgorithmMosh.PriorityQueue
             return _count == 0;
         }
 
+        public bool IsFull()
+        {
+            return _count == _items.Length;
+        }
+
         public override string ToString()
         {
             var sb = new StringBuilder();
             sb.Append("[");
-            foreach (var item in _items)
+
+            for (var i = 0; i < _items.Length; i++)
             {
-                sb.Append(item);
+                sb.Append(_items[i]);
+
+                if (i == _items.Length - 1) break;
                 sb.Append(",");
             }
 
             sb.Append("]");
 
-            return sb.ToString().TrimEnd(',');
+            return sb.ToString();
         }
     }
 }
