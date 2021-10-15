@@ -4,12 +4,12 @@ using System.Text;
 
 namespace DataStructureAndAlgorithmMosh.PriorityQueue
 {
-    public class PriorityQueue<T>
+    public class ArrayPriorityQueue<T>
     {
         private T[] _items;
         private int _count;
 
-        public PriorityQueue(int capacity)
+        public ArrayPriorityQueue(int capacity)
         {
             _items = new T[capacity];
         }

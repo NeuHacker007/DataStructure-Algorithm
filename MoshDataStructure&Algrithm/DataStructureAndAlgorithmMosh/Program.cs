@@ -6,7 +6,7 @@ namespace DataStructureAndAlgorithmMosh {
         static void Main (string[] args)
         {
 
-            PriorityQueue<int> queue = new PriorityQueue<int>(5);
+            ArrayPriorityQueue<int> queue = new ArrayPriorityQueue<int>(5);
 
             queue.Add(5);
             queue.Add(1);
