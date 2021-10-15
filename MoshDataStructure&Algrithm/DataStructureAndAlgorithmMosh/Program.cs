@@ -1,16 +1,17 @@
-﻿using TrieDemo;
+﻿using System;
+using TrieDemo;
+using DataStructureAndAlgorithmMosh.PriorityQueue;
 namespace DataStructureAndAlgorithmMosh {
     class Program {
-        static void Main (string[] args) {
+        static void Main (string[] args)
+        {
 
-            Trie trie = new Trie ();
-            trie.Insert ("car");
-            trie.Insert ("care");
-            trie.RemoveWord ("care");
-            trie.RemoveWord ("car");
+            PriorityQueue<int> queue = new PriorityQueue<int>(5);
 
-            System.Console.WriteLine (trie.Contains ("car"));
-            System.Console.WriteLine (trie.Contains ("care"));
+            queue.Add(5);
+            queue.Add(1);
+            Console.WriteLine(queue.ToString());
+            Console.ReadLine();
         }
 
     }
