@@ -20,7 +20,7 @@ namespace DataStructureAndAlgorithmMosh.Heap
 
         public void Add(T element)
         {
-            _elements[_count++] = element;
+            _elements[_count++] = element; 
 
             BubbleUp();
         }
