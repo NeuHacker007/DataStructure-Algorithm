@@ -11,7 +11,7 @@ namespace DataStructureAndAlgorithmMosh.Heap
         private readonly T[] _elements;
         private int _count;
         public int Count => _count;
-        public MaxHeap(int capacity)
+        public MaxHeap(int capacity = 10)
         {
             _capacity = capacity;
             _elements = new T[capacity];

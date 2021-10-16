@@ -13,7 +13,7 @@ namespace DataStructureAndAlgorithmMosh.Heap
 
         public int Count => _count;
 
-        public MinHeap(int capacity)
+        public MinHeap(int capacity = 10)
         {
             _capacity = capacity;
             _elements = new T[capacity];
