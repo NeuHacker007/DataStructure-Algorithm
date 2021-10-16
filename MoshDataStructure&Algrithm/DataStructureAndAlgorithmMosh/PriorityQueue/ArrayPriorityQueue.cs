@@ -13,6 +13,10 @@ namespace DataStructureAndAlgorithmMosh.PriorityQueue
         {
             _items = new T[capacity];
         }
+        /// <summary>
+        /// O (n) in worst case
+        /// </summary>
+        /// <param name="item"></param>
         public void Add(T item)
         {
             if (IsFull())
@@ -44,7 +48,10 @@ namespace DataStructureAndAlgorithmMosh.PriorityQueue
 
             return i + 1;
         }
-
+        /// <summary>
+        /// O(1)
+        /// </summary>
+        /// <returns></returns>
         public T Remove()
         {
             if (IsEmpty())
