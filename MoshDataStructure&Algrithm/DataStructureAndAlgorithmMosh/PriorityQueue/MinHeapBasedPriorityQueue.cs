@@ -12,7 +12,8 @@ namespace DataStructureAndAlgorithmMosh.PriorityQueue
         {
             private readonly string _value;
             private readonly int _priority;
-
+            public string Data => _value;
+            public int Priority => _priority;
             public Node(string value, int priority)
             {
                 _value = value;
@@ -65,27 +66,86 @@ namespace DataStructureAndAlgorithmMosh.PriorityQueue
 
                 _elements[0] = _elements[--_count];
 
-                var index = 0;
-                while (index <= _count
-                      && Comparer<T>.Default.Compare(_elements[index], _elements[2 * index + 1]) >0
-                      && Comparer<T>.Default.Compare(_elements[index], _elements[2 * index + 2]) >0)
-                {
-                    var smallerChildIndex = Comparer<T>
-                        .Default
-                        .Compare(_elements[2 * index + 1],  _elements[2 * index + 2]) >0
-                        ? 2 * index + 2
-                        : 2 * index + 1;
-
-                    Swap(index, smallerChildIndex);
-
-                    index = smallerChildIndex;
-                }
-
+                BubbleDown();
 
 
                 return result;
             }
 
+            private void BubbleDown()
+            {
+                var index = 0;
+                while (index <= _count
+                       && !IsValidChildren(index))
+                {
+                    var smallerChildIndex = GetSmallerChildIndex(index);
+
+                    Swap(index, smallerChildIndex);
+
+                    index = smallerChildIndex;
+                }
+            }
+
+            private int GetSmallerChildIndex(int index)
+            {
+                if (!HasLeftChild(index))
+                {
+                    return index;
+                }
+
+                if (!HasRightChild(index))
+                {
+                    return GetLeftChildIndex(index);
+                }
+
+                return Comparer<T>
+                    .Default
+                    .Compare(GetLeftChild(index), GetRightChild(index)) > 0
+                    ? GetRightChildIndex(index)
+                    : GetLeftChildIndex(index);
+            }
+
+            private bool HasRightChild(int index)
+            {
+                return GetRightChildIndex(index) <= _count;
+            }
+
+            private bool HasLeftChild(int index)
+            {
+                return GetLeftChildIndex(index) <= _count;
+            }
+
+            private bool IsValidChildren(int index)
+            {
+                if (!HasLeftChild(index))
+                {
+                    return true;
+                }
+
+                if (HasRightChild(index))
+                {
+                    return Comparer<T>.Default.Compare(_elements[index], GetLeftChild(index)) <= 0;
+                }
+                return Comparer<T>.Default.Compare(_elements[index], GetLeftChild(index)) <= 0
+                       && Comparer<T>.Default.Compare(_elements[index], GetRightChild(index)) <= 0;
+            }
+            private T GetRightChild(int index)
+            {
+                return _elements[GetRightChildIndex(index)];
+            }
+            private T GetLeftChild(int index)
+            {
+                return _elements[GetLeftChildIndex(index)];
+            }
+            private int GetLeftChildIndex(int index)
+            {
+                return 2 * index + 1;
+            }
+
+            private int GetRightChildIndex(int index)
+            {
+                return 2 * index + 2;
+            }
             private void BubbleUp()
             {
                 var index = _count - 1;
@@ -149,13 +209,14 @@ namespace DataStructureAndAlgorithmMosh.PriorityQueue
             var node = new Node(value, priority);
 
             minHeap.Add(node);
-            Console.WriteLine(minHeap.ToString());
+            
         }
 
-        public void Remove()
+        public (string, int) Remove()
         {
-            minHeap.Remove();
-            Console.WriteLine(minHeap.ToString());
+           var node = minHeap.Remove();
+
+           return (node.Data, node.Priority);
         }
 
         public bool IsEmpty()
@@ -173,7 +234,9 @@ namespace DataStructureAndAlgorithmMosh.PriorityQueue
             return minHeap.Count;
         }
 
-
-
+        public override string ToString()
+        {
+            return minHeap.ToString();
+        }
     }
 }
