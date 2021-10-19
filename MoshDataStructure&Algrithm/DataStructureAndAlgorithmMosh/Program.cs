@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+using DataStructureAndAlgorithmMosh.Tries;
 using TrieDemo;
 using HeapDemo;
 
@@ -8,57 +10,21 @@ namespace DataStructureAndAlgorithmMosh
     {
         static void Main(string[] args)
         {
-            // var nums = new int[] {5, 3, 10, 1, 4, 2};
 
-            //HeapSort.ShowHeapSortAsc(numbers);
-            //HeapSort.ShowHeapSortDesc(numbers);
+            DictionaryBasedTrie trie = new DictionaryBasedTrie();
 
-            //var nums = new int[] {5, 3, 8, 4, 1, 2};
-
-           // //var nums = new int[]{};
-
-           // // ArrayMaxHeaplify.MaxHeaplify(nums);
-
-           // // Console.WriteLine(HeapJudger.IsMaxHeap<int>(nums));
-           // //  Console.WriteLine(nums.PrintArray());
+            //trie.Add("cat");
+            //trie.Add("can");
+            //Console.WriteLine(trie.Contains("ca"));
+            trie.Add("care");
+            trie.Add("care");
+            //trie.Add("Ivan");
+            // trie.Traverse();
+            var sb = new StringBuilder();
+            sb.Append('a');
             
-           // queue = new MinHeapBasedPriorityQueue();
-           // queue.Add("Ivan", 5);
-           // queue.Add("Eva", 3);
-           // queue.Add("Guopin", 10);
-           // queue.Add("Tom", 1);
-           // queue.Add("jack", 4);
-           // queue.Add("Baby", 2);
-           // //Console.WriteLine(queue);
-           // //queue.Remove();
-           // //Console.WriteLine(queue);
-           // //queue.Remove();
-           // //Console.WriteLine(queue);
-           //var tuple = queue.Remove();
-           //Console.WriteLine($"Value: {tuple.Item1}; Priority:{tuple.Item2}");
-           //// Console.WriteLine(queue);
-           ///
-           MinHeap<int> minHeap = new MinHeap<int>();
-
-           minHeap.Add(5);
-           minHeap.Add(3);
-           minHeap.Add(8);
-           minHeap.Add(4);
-           minHeap.Add(1);
-           minHeap.Add(2);
-           Console.WriteLine(minHeap);
-           minHeap.Remove();
-           Console.WriteLine(minHeap);
-           minHeap.Remove();
-           Console.WriteLine(minHeap);
-           minHeap.Remove();
-           Console.WriteLine(minHeap);
-           minHeap.Remove();
-           Console.WriteLine(minHeap);
-           minHeap.Remove();
-           Console.WriteLine(minHeap);
-           minHeap.Remove();
-           Console.WriteLine(minHeap);
+            trie.TraverseRecursive();
+            Console.WriteLine("end");
             Console.ReadLine();
 
 

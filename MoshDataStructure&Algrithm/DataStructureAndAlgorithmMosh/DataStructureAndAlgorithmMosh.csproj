@@ -10,7 +10,6 @@
     <Folder Include="HashTable\" />
     <Folder Include="UndirectGraph\" />
     <Folder Include="Tree\" />
-    <Folder Include="Tries\" />
   </ItemGroup>
 
 </Project>
