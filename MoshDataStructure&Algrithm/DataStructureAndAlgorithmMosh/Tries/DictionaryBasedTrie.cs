@@ -18,7 +18,7 @@ namespace DataStructureAndAlgorithmMosh.Tries
                 _value = value;
             }
 
-            public bool HasChildren(char ch)
+            public bool HasChild(char ch)
             {
                 return _children.ContainsKey(ch);
             }
@@ -38,6 +38,16 @@ namespace DataStructureAndAlgorithmMosh.Tries
                 return _children.Values.ToArray();
             }
 
+            public bool HasChildren()
+            {
+                return _children.Count != 0;
+            }
+
+            public void Remove(char ch)
+            {
+                _children.Remove(ch);
+            }
+
             public override string ToString()
             {
                 return $"Value:{_value}; IsWordEnd:{isWordEnd}";
@@ -51,7 +61,7 @@ namespace DataStructureAndAlgorithmMosh.Tries
             var current = _root;
             foreach (var ch in word)
             {
-                if (!current.HasChildren(ch))
+                if (!current.HasChild(ch))
                 {
                     current.AddChild(ch);
                 }
@@ -70,7 +80,7 @@ namespace DataStructureAndAlgorithmMosh.Tries
             var current = _root;
             foreach (var ch in word)
             {
-                if (!current.HasChildren(ch))
+                if (!current.HasChild(ch))
                 {
                     return false;
                 }
@@ -115,6 +125,32 @@ namespace DataStructureAndAlgorithmMosh.Tries
             foreach (var child in root.GetChildren())
             {
                 RecursiveHelper(child);
+            }
+        }
+
+        public void Remove(string word)
+        {
+            if (string.IsNullOrWhiteSpace(word)) return;
+            Remove(_root, word,0);
+        }
+
+        private void Remove(Node root, string word, int index)
+        {
+            if (index == word.Length)
+            {
+                root.isWordEnd = false;
+                return;
+            }
+            var ch = word[index];
+            var child = root.GetChild(ch);
+
+            if (child == null) return;
+
+            Remove(child, word, index + 1);
+
+            if (!root.HasChildren() && !root.isWordEnd)
+            {
+                root.Remove(ch);
             }
         }
     }
