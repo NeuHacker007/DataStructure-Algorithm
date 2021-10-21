@@ -153,5 +153,43 @@ namespace DataStructureAndAlgorithmMosh.Tries
                 root.Remove(ch);
             }
         }
+
+        public IList<string> FindWords(string prefix)
+        {
+            var words = new List<string>();
+            var lastNode = GetTheLastNodeOf(prefix);
+            FindWords(lastNode, prefix, words);
+            return words;
+        }
+
+        private void FindWords(Node root, string prefix, List<string> words)
+        {
+            if (root == null) return;
+            if (root.isWordEnd)
+            {
+                words.Add(prefix);
+            }
+
+            foreach (var child in root.GetChildren())
+            {
+                FindWords(child, prefix + child.Value, words);
+            }
+        }
+
+        private Node GetTheLastNodeOf(string prefix)
+        {
+            if (string.IsNullOrWhiteSpace(prefix)) return null;
+            var current = _root;
+
+            foreach (var ch in prefix)
+            {
+                var child = current.GetChild(ch);
+                if (child == null) return null;
+
+                current = child;
+            }
+
+            return current;
+        }
     }
 }

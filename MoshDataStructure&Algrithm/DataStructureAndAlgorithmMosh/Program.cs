@@ -18,12 +18,12 @@ namespace DataStructureAndAlgorithmMosh
             //Console.WriteLine(trie.Contains("ca"));
             trie.Add("care");
             trie.Add("care");
-            //trie.Add("Ivan");
-            // trie.Traverse();
-            var sb = new StringBuilder();
-            sb.Append('a');
-            
-            trie.TraverseRecursive();
+
+           var a =  trie.FindWords("care");
+           foreach (var item in a)
+           {
+               Console.WriteLine(item);
+           }
             Console.WriteLine("end");
             Console.ReadLine();
 
