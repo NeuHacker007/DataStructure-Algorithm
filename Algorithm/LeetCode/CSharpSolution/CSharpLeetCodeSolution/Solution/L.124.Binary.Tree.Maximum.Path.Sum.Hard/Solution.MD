@@ -8,11 +8,11 @@ First of all, let's simplify the problem and implement a function max_gain(node)
 In other words, it's a maximum gain one could have including the node (and maybe one of its subtrees) into the path.
 `
 
-![](124_gains.png)
+![](img/124_gains.png)
 
 Hence if one would know for sure that the max path contains root, the problem would be solved as max_gain(root). Unfortunately, the max path does not need to go through the root, and here is an example of such a tree
 
-![](124_max_path.png)
+![](img/124_max_path.png)
 
 That means one needs to modify the above function and to check at each step what is better : to continue the current path or to start a new path with the current node as a highest node in this new path.
 

@@ -19,11 +19,11 @@ public class TreeNode {
 **Intuition**
 On the first sight, the problem is trivial. Let's traverse the tree and check at each step if `node.right.val > node.val` and `node.left.val < node.val`. This approach would even work for some trees
 
-![](98_not_bst.png)
+![](img/98_not_bst.png)
 
 The problem is this approach will not work for all cases. Not only the right child should be larger than the node but all the elements in the right subtree. Here is an example :
 
-![](98_not_bst_3.png)
+![](img/98_not_bst_3.png)
 
 That means one should keep both upper and lower limits for each node while traversing the tree, and compare the node value not with children values but with these limits.
 
@@ -107,7 +107,7 @@ class Solution {
 
 Let's use the order of nodes in the inorder traversal `Left -> Node -> Right`.
 
-![](145_transverse.png)
+![](img/145_transverse.png)
 
 Here the nodes are enumerated in the order you visit them, and you could follow `1-2-3-4-5` to compare different strategies.
 
@@ -119,7 +119,7 @@ Hence the algorithm with O(N) time complexity and O(N) space complexity could be
 
 * Check if each element in `inorder` is smaller than the next one.
 
-![](98_bst_inorder.png)
+![](img/98_bst_inorder.png)
 
 > Do we need to keep the whole inorder traversal list?
 
@@ -131,7 +131,7 @@ class Solution {
     Stack<TreeNode> stack = new Stack();
     double inorder = - Double.MAX_VALUE;
 
-    while (!stack.isEmpty() || root != null) {
+    while (!stack.isEmpty() || root != null)k {
       while (root != null) {
         stack.push(root);
         root = root.left;
