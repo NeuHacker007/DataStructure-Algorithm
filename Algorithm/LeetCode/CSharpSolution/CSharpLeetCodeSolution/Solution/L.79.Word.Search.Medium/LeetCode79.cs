@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BackTraceSolution
+namespace BackTrackSolution
 {
     public class LeetCode79
     {
@@ -26,7 +26,7 @@ namespace BackTraceSolution
 
                     if (word[0] == board[rowIndex][colIndex])
                     {
-                        if (Helper(board,rowIndex,colIndex,word,0, visited)) return true; 
+                        if (Helper(board, rowIndex, colIndex, word, 0, visited)) return true;
                     }
                 }
             }
@@ -51,11 +51,11 @@ namespace BackTraceSolution
             int index, bool[][] visited)
         {
             if (index == word.Length) return true;
-            
+
             // 超出边界
-            if (rowIndex < 0 
-                || colIndex < 0 
-                || rowIndex >= board.Length 
+            if (rowIndex < 0
+                || colIndex < 0
+                || rowIndex >= board.Length
                 || colIndex >= board[0].Length)
             {
                 return false;
@@ -71,18 +71,18 @@ namespace BackTraceSolution
 
             if (
                 Helper(board, rowIndex + 1, colIndex, word, index + 1, visited)
-                || Helper(board,rowIndex -1, colIndex,word,index + 1, visited)
-                || Helper(board,rowIndex, colIndex + 1, word,index + 1, visited)
-                || Helper(board,rowIndex, colIndex -1, word, index + 1, visited))
+                || Helper(board, rowIndex - 1, colIndex, word, index + 1, visited)
+                || Helper(board, rowIndex, colIndex + 1, word, index + 1, visited)
+                || Helper(board, rowIndex, colIndex - 1, word, index + 1, visited))
             {
                 return true;
             }
 
             // 撤销选择
             visited[rowIndex][colIndex] = false;
-            
+
             return false;
         }
-        
+
     }
 }

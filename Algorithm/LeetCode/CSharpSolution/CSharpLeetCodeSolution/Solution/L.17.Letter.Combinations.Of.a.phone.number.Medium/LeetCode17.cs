@@ -7,7 +7,7 @@
  */
 using System.Collections.Generic;
 using System.Text;
-namespace BackTraceSolution
+namespace BackTrackSolution
 {
     public class LeetCode17
     {
