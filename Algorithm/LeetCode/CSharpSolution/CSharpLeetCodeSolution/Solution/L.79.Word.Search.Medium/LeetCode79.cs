@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Solution
+namespace BackTraceSolution
 {
     public class LeetCode79
     {
