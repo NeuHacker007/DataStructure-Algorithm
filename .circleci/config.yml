@@ -1,0 +1,47 @@
+
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: microsoft/dotnet:latest
+        auth:
+          username: ivanzhang1989
+          password: $DOCKERHUB_PASSWORD
+    steps:
+      # Checkout the code as the first step.
+      - checkout
+      # Then simply use the dotnet container as you'd expect and run your tests
+      - run:
+          # Update this line with the directory that contains your tests project file
+          working_directory: ~/Algorithm/LeetCode/CSharpSolution/CSharpLeetCodeSolution/Solution
+          name: Run build
+          command: |
+            dotnet build
+  test:
+     docker:
+      - image: microsoft/dotnet:latest
+        auth:
+          username: ivanzhang1989
+          password: $DOCKERHUB_PASSWORD
+
+     steps:
+      # Checkout the code as the first step.
+      - checkout
+      # Then simply use the dotnet container as you'd expect and run your tests
+      - run:
+          # Update this line with the directory that contains your tests project file
+          working_directory: ~/Algorithm/LeetCode/CSharpSolution/CSharpLeetCodeSolution/Solution.Tests
+          name: Run tests
+          command: |
+            dotnet test
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  build_and_test: # This is the name of the workflow, feel free to change it to better match your workflow.
+    # Inside the workflow, you define the jobs you want to run.
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
