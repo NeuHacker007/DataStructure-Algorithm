@@ -17,6 +17,7 @@ jobs:
           working_directory: /DataStructure-Algorithm/Algorithm/LeetCode/CSharpSolution/CSharpLeetCodeSolution
           name: Run build
           command: |
+            dir
             dotnet build
   test:
      docker:
@@ -34,6 +35,7 @@ jobs:
           working_directory: ~/Algorithm/LeetCode/CSharpSolution/CSharpLeetCodeSolution/Solution.Tests
           name: Run tests
           command: |
+            dir
             dotnet test
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
