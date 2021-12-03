@@ -12,13 +12,12 @@ jobs:
       # Checkout the code as the first step.
       - checkout
       # Then simply use the dotnet container as you'd expect and run your tests
-      - run: pwd
       - run:
           # Update this line with the directory that contains your tests project file
           
           name: Run build
           command: |
-            
+            pwd
   test:
      docker:
       - image: mcr.microsoft.com/dotnet/sdk:6.0
