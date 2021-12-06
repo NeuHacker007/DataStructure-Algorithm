@@ -11,7 +11,7 @@ namespace LcArraySolution
 
     public class LeetCode35
     {
-        public int SearchInsert(int[] nums, int target)
+        public static int SearchInsert(int[] nums, int target)
         {
             var low = 0;
             var high = nums.Length - 1;
