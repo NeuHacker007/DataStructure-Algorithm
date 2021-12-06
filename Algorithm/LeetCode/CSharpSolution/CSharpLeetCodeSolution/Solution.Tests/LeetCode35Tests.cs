@@ -23,7 +23,7 @@ namespace Solution.Tests
             new Object[] {tc1, 0, 0},
             new Object[] {tc2, 0, 0}
         };
-        [TestCase]
+        [Test]
         [TestCaseSource("leetCode35TestsCases")]
         public void SearchInsert_WhenCalled_ReturnInsertPosition(int[] nums, int target, int expectedResult)
         {
