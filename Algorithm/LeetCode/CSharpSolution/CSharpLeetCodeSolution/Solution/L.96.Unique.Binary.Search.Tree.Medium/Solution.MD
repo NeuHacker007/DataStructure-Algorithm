@@ -21,11 +21,11 @@ As we can see,
 
 > G(n) is actually the desired function we need in order to solve the problem.
 
-![](LeetCode96%20Algoritem%201%20Analysis.png)
+![](img/LeetCode96%20Algoritem%201%20Analysis.png)
 
-![](96_BST.png)
+![](img/96_BST.png)
 
-![](LeetCode96%20Algoritem%201%20Analysis_2.png)
+![](img/LeetCode96%20Algoritem%201%20Analysis_2.png)
 
 ```Java
 public class Solution {
@@ -44,10 +44,10 @@ public class Solution {
 }
 ```
 
-![](LeetCode96%20Algoritem%201%20Analysis_3.png)
+![](img/LeetCode96%20Algoritem%201%20Analysis_3.png)
 
 ---
-![](LeetCode96%20Algoritem%202%20Analysis.png)
+![](img/LeetCode96%20Algoritem%202%20Analysis.png)
 
 ```Java
 class Solution {
