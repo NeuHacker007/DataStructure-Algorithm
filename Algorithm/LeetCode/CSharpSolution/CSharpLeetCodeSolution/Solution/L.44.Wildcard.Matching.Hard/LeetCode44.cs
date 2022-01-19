@@ -1,7 +1,7 @@
 /**
  * Author: yf.eva.yifan@gmail.com
  * Date: 01-09-2022 20:53:58
- * LastEditTime: 01-09-2022 21:10:02
+ * LastEditTime: 01-19-2022 13:12:31
  * FilePath: \CSharpLeetCodeSolution\Solution\L.44.Wildcard.Matching.Hard\LeetCode44.cs
  * Description: 
  */
@@ -35,9 +35,9 @@ namespace DpSolution
                 dp[0][j] = true;
             }
 
-            for (int i = 0; i <= m; i++)
+            for (int i = 1; i <= m; i++)
             {
-                for (int j = 0; j <= n; j++)
+                for (int j = 1; j <= n; j++)
                 {
                     if (p[j] == '?')
                     {
