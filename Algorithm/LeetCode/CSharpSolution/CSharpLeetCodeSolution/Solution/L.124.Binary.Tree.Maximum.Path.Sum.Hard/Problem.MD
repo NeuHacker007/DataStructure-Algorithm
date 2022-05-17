@@ -1,4 +1,4 @@
-﻿# 124. Binary Tree Maximum Path Sum (hard)
+# 124. Binary Tree Maximum Path Sum (hard)
 
 Given a **non-empty** binary tree, find the maximum path sum.
 
