@@ -9,7 +9,7 @@ namespace Solution
     {
         static void Main(string[] args)
         {
-            LeetCode322.CoinChange(new int[] { 2 }, 3);
+            Leetcode119.Solution2(3);
         }
     }
 }
