@@ -9,7 +9,7 @@ namespace Solution
     {
         static void Main(string[] args)
         {
-            Leetcode119.Solution2(3);
+            LeetCode6.Convert("PAYPALISHIRING",3);
         }
     }
 }
