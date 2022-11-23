@@ -1,0 +1,16 @@
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\obj\Debug\net5.0\AmazonOnlineOA.csproj.AssemblyReference.cache
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\obj\Debug\net5.0\AmazonOnlineOA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\obj\Debug\net5.0\AmazonOnlineOA.AssemblyInfoInputs.cache
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\obj\Debug\net5.0\AmazonOnlineOA.AssemblyInfo.cs
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\obj\Debug\net5.0\AmazonOnlineOA.csproj.CoreCompileInputs.cache
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\bin\Debug\net5.0\AmazonOnlineOA.exe
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\bin\Debug\net5.0\AmazonOnlineOA.deps.json
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\bin\Debug\net5.0\AmazonOnlineOA.runtimeconfig.json
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\bin\Debug\net5.0\AmazonOnlineOA.runtimeconfig.dev.json
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\bin\Debug\net5.0\AmazonOnlineOA.dll
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\bin\Debug\net5.0\AmazonOnlineOA.pdb
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\obj\Debug\net5.0\AmazonOnlineOA.dll
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\obj\Debug\net5.0\ref\AmazonOnlineOA.dll
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\obj\Debug\net5.0\AmazonOnlineOA.pdb
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\obj\Debug\net5.0\AmazonOnlineOA.genruntimeconfig.cache
+C:\Drive H Work\DataStructure-Algorithm\Algorithm\LeetCode\CSharpSolution\CSharpLeetCodeSolution\AmazonOnlineOA\obj\Debug\net5.0\refint\AmazonOnlineOA.dll

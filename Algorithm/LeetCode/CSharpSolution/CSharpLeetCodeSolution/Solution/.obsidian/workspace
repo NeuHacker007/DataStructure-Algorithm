@@ -1,0 +1,150 @@
+{
+  "main": {
+    "id": "bc449e91c3767c2f",
+    "type": "split",
+    "children": [
+      {
+        "id": "73c2a29f4dfecc58",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "L.9.Palindrome.Number.Easy/Solution.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bb417106e7ea095a",
+    "type": "split",
+    "children": [
+      {
+        "id": "c436cf3757b340d1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "39e0d086f69847a0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "901a1163bcb4fe7c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "a8ecbd97b6b6877b",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "aa2485f6ce212dd5",
+    "type": "split",
+    "children": [
+      {
+        "id": "b5fa9c118d670374",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a28bd587422b80e4",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "L.9.Palindrome.Number.Easy/Solution.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e678dc25a376d270",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "L.9.Palindrome.Number.Easy/Solution.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1b4fb3a4da2584e3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "68af513ba5aeb25e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "L.9.Palindrome.Number.Easy/Solution.md"
+              }
+            }
+          },
+          {
+            "id": "9a2fc860eef4b8ff",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "73c2a29f4dfecc58",
+  "lastOpenFiles": [
+    "L.9.Palindrome.Number.Easy/Problem.md",
+    "L.58.Length.Of.Last.Word.Easy/Solution.md",
+    "L.58.Length.Of.Last.Word.Easy/Problem.md",
+    "L.7.Reverse.Integer.Medium/Solution.md",
+    "L.7.Reverse.Integer.Medium/Problem.md",
+    "2022-10-12.md",
+    "L.1.Two.Sum.Easy/Solution.md",
+    "L.1.Two.Sum.Easy/Problem.md"
+  ]
+}
