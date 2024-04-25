@@ -65,7 +65,7 @@ public class LeetCode18
         return result;
     } 
     
-    static void CheckAndAdd(IList<IList<int>> result, int a, int b, int c, int d) {
+    private static void CheckAndAdd(IList<IList<int>> result, int a, int b, int c, int d) {
         if (result.Count == 0) {
             result.Add(new List<int> {a, b, c, d});
         }
