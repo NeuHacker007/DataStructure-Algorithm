@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="L.1071.GreatestCommonDivisorOfStrings.Easy\img\" />
     <Folder Include="L.46.Permutations\" />
   </ItemGroup>
 
