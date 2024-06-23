@@ -10,6 +10,15 @@ pipeline {
                 '''
             }
         }
+        stage('test') {
+            steps {
+                echo 'Start test'
+                bat '''
+                cd "C:\\Drive H Work\\DataStructure-Algorithm\\Algorithm\\LeetCode\\CSharpSolution\\CSharpLeetCodeSolution"
+                dotnet test
+                '''
+            }
+        }
     }
 
 }
