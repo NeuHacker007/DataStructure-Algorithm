@@ -6,12 +6,27 @@
 
 trigger:
 - master
+stages:
+  - stage: build
+    jobs:
+      - job: build 
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+        - task: UseDotNet@2
+          inputs:
+                packageType: 'sdk'
+                version: 8.x
+                performMultiLevelLookup: true
+        - task: NuGetCommand@2
+          inputs:
+            command: 'restore'
+            restoreSolution: '**/*.sln'
+            feedsToUse: 'select'
+        - task: DotNetCoreCLI@2
+          inputs:
+            command: 'build'
+            projects: '**/*.csproj'
+ 
 
-pool:
-  vmImage: ubuntu-latest
 
-steps:
-- script: cd ./Algorithm/LeetCode/CSharpSolution/CSharpLeetCodeSolution/Solution
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
